@@ -20,6 +20,10 @@ body {
   transition: 500ms;
 }
 
+.h1-eco {
+  color: #69b161;
+}
+
 .outer-container {
   display: flex;
   justify-content: center;
@@ -114,7 +118,8 @@ body {
 }
 
 .form-cover .sign-in-form {
-  transition-delay: 0.25s;
+  left: 0;
+  transition-delay: 0.1s;
 }
 
 .form-cover.active .sign-in-form {
@@ -124,12 +129,12 @@ body {
 
 .form-cover .sign-up-form {
   left: 100%;
-  transition-delay: 0;
+  transition-delay: 0.1s;
 }
 
 .form-cover.active .sign-up-form {
   left: 0;
-  transition-delay: 0.25s;
+  transition-delay: 0;
 }
 
 .form-cover .form form {
@@ -152,6 +157,11 @@ body {
   outline: none;
   font-size: 16px;
   border: 1px solid #202020;
+}
+
+.form-cover .form a {
+  text-decoration: none;
+  color: #202020;
 }
 
 .form-cover .form form input[type="submit"] {
