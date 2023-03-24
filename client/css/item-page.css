@@ -1,0 +1,40 @@
+body {  
+    height: 125vh;  
+    margin: 0px; 
+    padding: 0px;  
+    background-size: cover;  
+    font-family: sans-serif;  
+}  
+
+header {  
+    background-color: rgba(209, 243, 223, 0.69);  
+    position: fixed;  
+    left: 0;  
+    right: 0;  
+    top: 5px;  
+    height: 30px; 
+    padding: 20px; 
+    display: flex;  
+    align-items: center;  
+} 
+
+header * {  
+    display: inline;  
+}  
+
+header h1 {
+    padding-left: 10px;
+}
+
+header li {  
+    margin: 20px;  
+    align-items: center;
+}  
+
+header li a {   
+    text-decoration: none;  
+} 
+
+/* header li:hover {
+    color: blue;
+} */
