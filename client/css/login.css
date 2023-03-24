@@ -110,16 +110,26 @@ body {
   left: 0;
   width: 100%;
   padding: 50px;
-  transform: 500ms;
+  transition: 500ms;
 }
 
 .form-cover .sign-in-form {
-  transition-delay: 250ms;
+  transition-delay: 0.25s;
 }
 
 .form-cover.active .sign-in-form {
   left: -100%;
   transition-delay: 0;
+}
+
+.form-cover .sign-up-form {
+  left: 100%;
+  transition-delay: 0;
+}
+
+.form-cover.active .sign-up-form {
+  left: 0;
+  transition-delay: 0.25s;
 }
 
 .form-cover .form form {
@@ -166,4 +176,48 @@ body {
 .footer a {
   color: #202020;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 400px;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bg {
+    top: 0;
+    height: 100%;
+  }
+
+  .form-cover {
+    width: 100%;
+    height: 500px;
+    top: 0;
+    box-shadow: none;
+  }
+
+  .content {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+  }
+
+  .sign-in {
+    background-position: 50% 50%;
+    top: 0;
+  }
+
+  .form-cover.active {
+    left: 0;
+    top: 150px;
+  }
+
+  .footer {
+    padding: 25px 15px;
+    font-size: 14px;
+  }
 }
