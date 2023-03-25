@@ -1,7 +1,7 @@
 body {  
     height: 125vh;  
-    margin: 0 !important; 
-    padding: 0 !important;  
+    margin: 0; 
+    padding: 0;  
     background-size: cover;  
     font-family: 'Work Sans', sans-serif; 
 }  
@@ -9,28 +9,24 @@ body {
 .topnav {  
     background-color: rgb(208,244,188);  
     position: sticky;  
-    left: 0;  
-  
+    right: 0;   
     height: 10px; 
     padding: 25px; 
     padding-bottom: 30px;
     display: flex;  
     align-items: center;  
+     
 } 
 
 .topnav * {  
-    display: inline;  
+    display: inline;
 }  
 
-.topnav h1 {
-    padding-left: 10px;
-}
-
 .topnav li { 
-    float: right;
-    margin-left: 150px;  
+    float: left;
+    padding-right: 150px;  
     padding-top: 5px;
-    align-items: center;
+    align-items: right;
     text-align: center;
 }  
 
@@ -82,9 +78,18 @@ body {
     }
 }
 
-h2 {
+.image-title {
+    border: 2px solid black;
+    width: 200px; 
+    height: 200px; 
+    margin-left: 50px;
+    margin-top: 50px;
+    display: flex;
+
+}
+
+.image-title > h2 {
     text-align: center;
-    padding-top: 20px;
     font-size: 30px;
 }
 
