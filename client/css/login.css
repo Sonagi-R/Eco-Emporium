@@ -1,27 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-}
-
 header {
   color: #202020;
   display: flex;
   justify-content: center;
   padding: 18px 32px;
-}
-
-body {
-  min-height: 100vh;
-  background: #fafafa;
-  transition: 500ms;
-}
-
-.h1-eco {
-  color: #69b161;
 }
 
 .outer-container {
