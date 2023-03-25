@@ -1,7 +1,7 @@
 body {  
     height: 125vh;  
     margin: 0; 
-    padding: 0;  
+    padding: 0; 
     background-size: cover;  
     font-family: 'Work Sans', sans-serif; 
 }  
@@ -44,7 +44,137 @@ body {
 
 .topnav .icon {
     display: none;
+}
+
+.main-page {
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.item-image {
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    margin-left: 50px;
+    overflow: hidden;
+    display: flex;  
+}
+
+.item-image > img {
+    max-width: 500px;
+    align-self: center;
+}
+
+.item-details {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    height: 500px;
+    width: 800px;
+    
+}
+
+.image-title {
+    margin-top: 30px;
+    display: flex;
+    float:right;
+    text-align: center;
+    font-size: 30px;
+}
+
+.item-price {
+    width:200px;
+    text-align: center;
+    display: flex;
+}
+
+.item-buttons {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.quick-actions {
+    display: flex;
+    flex-direction: row;
+    width: 140px;
+    justify-content: space-between;
+    
+}
+
+
+.button-36 {
+    background-color: #fcfdfc;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: #020703;
+    cursor: pointer;
+    font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    padding: 10px 25px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
   }
+
+.button-36:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+.button-37 {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-37:hover {
+    box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+    transform: translateY(-2px);
+  }
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+  .button-37 {
+    padding: 10px 30px;
+  }
+}
 
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
@@ -76,36 +206,4 @@ body {
         display: block;
         text-align: left;
     }
-}
-
-.image-title {
-    border: 2px solid black;
-    width: 200px; 
-    height: 200px; 
-    margin-left: 50px;
-    margin-top: 50px;
-    display: flex;
-
-}
-
-.image-title > h2 {
-    text-align: center;
-    font-size: 30px;
-}
-
-
-.item-image {
-    border: 2px solid black;
-    width: 500px;
-    height: 500px;
-    margin-left: 100px;
-    margin-top: 50px;
-    overflow: hidden;
-    display: flex;
-    
-}
-
-.item-image > img {
-    max-width: 500px;
-    align-self: center;
 }
