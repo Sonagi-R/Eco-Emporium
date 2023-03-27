@@ -108,13 +108,14 @@ h2 {
 .item-price, .item-bought {
     width: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    margin-top: 0px;
+    margin-bottom: 0px;
     font-family: 'Work Sans', sans-serif;
     font-weight: 200;
 }
 
 .item-buttons {
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -123,6 +124,7 @@ h2 {
 }
 
 .quick-actions {
+    padding-top: 10px;
     display: flex;
     flex-direction: row;
     width: 140px;
