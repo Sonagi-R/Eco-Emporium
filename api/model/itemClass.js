@@ -1,15 +1,15 @@
-const db = require('../database/connect.js')
+const db = require('../database/connect')
 
 class Item {
-    constructor(item) {
-        this.name = item.name;
-        this.detail = item.detail;
-        this.price = item.price;
-        this.image_url = item.image_url;
+    constructor({ name, detail, price, image_url }) {
+        this.name = name;
+        this.detail = detail;
+        this.price = price;
+        this.image_url = image_url;
     }
 
     static async showAll() {
-        const response = await db.query('SELECT * FROM items;');
+        const response = await db.query('SELECT * FROM items ORDER BY item_id');
         return response.rows.map(i => new Item(i));
     }
 
