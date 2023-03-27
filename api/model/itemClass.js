@@ -23,7 +23,7 @@ class Item {
 
     static async create(newItem) {
         const { name, price, description, image_url } = newItem
-        const response = await db.query('INSERT INTO items (name, price, details) VALUES ($1, $2, $3, $4) RETURNING *;', [name, price, description, image_url])
+        const response = await db.query('INSERT INTO items (name, price, description, image_url) VALUES ($1, $2, $3, $4) RETURNING *;', [name, price, description, image_url])
 
         if (response.rows.length != 1) {
             throw new Error('Could not add item to the database')
@@ -36,12 +36,15 @@ class Item {
     }
 
     async update(updateItem) {
-        const { name, price, description, image_url } = item 
-        const response = await db.query('UPDATE items SET name=$1, price=$2, details=$3, image_url=$4 WHERE  name =$5 returning *', [name, price, description, image_url, this.name])
+        const keyArray = ['name', 'price', 'description', 'image_url']
+        for (let i = 0; i < keyArray.length; i++){
+            if (!updateItem[`${keyArray[i]}`]) {
+                updateItem[`${keyArray[i]}`] = this[`${keyArray[i]}`]
+            }
+        }
+        const response = await db.query('UPDATE items SET name=$1, price=$2, description=$3, image_url=$4 WHERE  name =$5 returning *', [updateItem.name, updateItem.price, updateItem.description, updateItem.image_url, this.name])
         return new Item(response.rows[0])
     }
-
-
 }
 
 module.exports = Item
