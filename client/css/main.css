@@ -131,8 +131,7 @@ header > span {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
   grid-gap: 15px;
-  justify-content: center;
-  padding: initial;
+  padding-left: 65px;
 }
 
 .product {
@@ -286,12 +285,6 @@ nav ul a {
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   header {
     display: flex;
     flex-direction: column;
@@ -309,6 +302,7 @@ nav ul a {
 
   .category-drop-down {
     display: block;
+    margin: 0 auto;
   }
 
   .dashboard {
@@ -341,6 +335,7 @@ nav ul a {
     height: 100%;
     gap: 20px;
     align-content: start;
+    padding-left: 0;
   }
 
   .user i {
