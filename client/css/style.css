@@ -21,3 +21,19 @@ header > a{
 .h1-eco {
   color: #69b161;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 25px 0;
+  color: #202020;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer a {
+  color: #202020;
+  text-decoration: none;
+}

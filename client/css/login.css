@@ -153,22 +153,6 @@ header {
   cursor: pointer;
 }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 25px 0;
-  color: #202020;
-  text-align: center;
-  text-decoration: none;
-}
-
-.footer a {
-  color: #202020;
-  text-decoration: none;
-}
-
 @media only screen and (max-width: 600px) {
   .container {
     max-width: 400px;
