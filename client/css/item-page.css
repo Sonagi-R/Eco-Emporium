@@ -61,7 +61,7 @@ h2 {
     flex-direction: row;
 }
 
-.item-carousel {
+.multi-carousel {
     /* border: 2px solid black; */
     overflow: hidden;
     display: flex;
@@ -73,7 +73,7 @@ h2 {
 }
 
 .item-image {
-    /* border: 2px solid black; */
+    border: 2px solid black;
     width: 560px;
     height: 560px;
     margin-left: 10px;
@@ -100,21 +100,19 @@ h2 {
     border: none;
 }
 
-.left-button {
+#previous {
     position: absolute;
     top: 50%;
     margin-left: 10px;
   
 }
 
-.right-button {
+#next {
     position: absolute;
     top: 50%;
     right: 0;
     margin-right: 10px;
 }
-
-
 
 .item-details {
     /* border: 2px solid black; */
