@@ -10,9 +10,9 @@ async function index(req, res) {
 }
 
 async function getOneById(req, res) {
-    const itemName = req.params.name
+    const idx= req.params.id
     try {
-        const item = await Item.show(itemName)
+        const item = await Item.getOneById(idx)
         res.status(200).send(item)
     } catch (error) {
         res.status(404).send({error:"item not found"})
@@ -20,8 +20,9 @@ async function getOneById(req, res) {
 }
 
 async function create(req, res) {
+    const item = req.body
     try {
-        const newItem = await Item.create(req.body)
+        const newItem = await Item.create(item)
         res.status(201).send(newItem)
     } catch (error) {
         res.status(500).send({error: 'Error with the item database'})

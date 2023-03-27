@@ -1,9 +1,9 @@
 const db = require('../database/connect')
 
 class Item {
-    constructor({ name, detail, price, image_url }) {
+    constructor({ name, description, price, image_url }) {
         this.name = name;
-        this.detail = detail;
+        this.description = description;
         this.price = price;
         this.image_url = image_url;
     }
@@ -22,8 +22,8 @@ class Item {
     }
 
     static async create(newItem) {
-        const { name, price, details } = newItem
-        const response = await db.query('INSERT INTO items (name, price, details) VALUES ($1, $2, $3, $4) RETURNING *;', [name, price, details, image_url])
+        const { name, price, description, image_url } = newItem
+        const response = await db.query('INSERT INTO items (name, price, details) VALUES ($1, $2, $3, $4) RETURNING *;', [name, price, description, image_url])
 
         if (response.rows.length != 1) {
             throw new Error('Could not add item to the database')
@@ -36,8 +36,8 @@ class Item {
     }
 
     async update(updateItem) {
-        const { name, price, details, image_url } = item 
-        const response = await db.query('UPDATE items SET name=$1, price=$2, details=$3, image_url=$4 WHERE  name =$5 returning *', [name, price, details, image_url, this.name])
+        const { name, price, description, image_url } = item 
+        const response = await db.query('UPDATE items SET name=$1, price=$2, details=$3, image_url=$4 WHERE  name =$5 returning *', [name, price, description, image_url, this.name])
         return new Item(response.rows[0])
     }
 

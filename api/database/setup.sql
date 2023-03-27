@@ -4,13 +4,13 @@ CREATE TABLE items(
     item_id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(50) NOT NULL,
     price INT NOT NULL,
-    details VARCHAR(255),
+    description VARCHAR(255),
     image_url VARCHAR(255),
     user_id INT GENERATED ALWAYS AS IDENTITY,
     PRIMARY KEY (item_id)
 );
 
-INSERT INTO items(name, price, details,image_url)
+INSERT INTO items(name, price, description,image_url)
 VALUES
     ('Laptop Backpack', 8015, 'This sleek and durable laptop backpack features multiple compartments and a padded sleeve to keep your laptop safe and secure.','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXsKib2hN1Hhm0nk-GLbP4CHna7WSyziaYEA&usqp=CAU'),
     ('Wireless Bluetooth Speaker', 7000, 'Experience high-quality sound and portability with this wireless Bluetooth speaker. It''s waterproof and has a long battery life.', 'https://cdn.shopify.com/s/files/1/0503/4170/7969/products/xdobo2_700x700.jpg?v=1671229502'),
