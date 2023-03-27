@@ -78,7 +78,7 @@ h2 {
     height: 560px;
     margin-left: 10px;
     overflow: hidden;
-    display: flex;  
+    position: relative;  
 }
 
 .item-image > img {
@@ -86,13 +86,17 @@ h2 {
     align-self: center;
 }
 
-.overlay {
-    height: 100%;
-    width: 100%;
-    opacity: 0.3;
+.left-button, .right-button {
+    /* height: 100%;
+    width: 100%; */
+    /* opacity: 0.3;
     transition: .3s ease;
-    background-color: transparent;
+    background-color: transparent; */
+    position: absolute;
 }
+
+
+
 
 .item-details {
     /* border: 2px solid black; */
