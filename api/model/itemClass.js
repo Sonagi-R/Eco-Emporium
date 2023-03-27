@@ -5,7 +5,7 @@ class Item {
         this.name = item.name;
         this.detail = item.detail;
         this.price = item.price;
-
+        this.image_url = item.image_url;
     }
 
     static async showAll() {
@@ -23,7 +23,7 @@ class Item {
 
     static async create(newItem) {
         const { name, price, details } = newItem
-        const response = await db.query('INSERT INTO items (name, price, details) VALUES ($1, $2, $3) RETURNING *;', [name, price, details])
+        const response = await db.query('INSERT INTO items (name, price, details) VALUES ($1, $2, $3, $4) RETURNING *;', [name, price, details, image_url])
 
         if (response.rows.length != 1) {
             throw new Error('Could not add item to the database')
@@ -36,10 +36,12 @@ class Item {
     }
 
     async update(updateItem) {
-        const { name, price, details } = item 
-        const response = await db.query('UPDATE items SET name=$1, price=$2, details=$3 WHERE  name =$4 returning *', [name, price, details, this.name])
+        const { name, price, details, image_url } = item 
+        const response = await db.query('UPDATE items SET name=$1, price=$2, details=$3, image_url=$4 WHERE  name =$5 returning *', [name, price, details, image_url, this.name])
         return new Item(response.rows[0])
     }
 
 
 }
+
+module.exports = Item

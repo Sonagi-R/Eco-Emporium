@@ -3,7 +3,7 @@ const Item = require('../Model/itemClass')
 async function index(req, res) {
     try {
         const items = await Item.showAll();
-        res.status(200).send(items)
+        res.status(200).json(items)
     } catch (error) {
         res.status(500).send({error:'Error with the item database'})
     }
