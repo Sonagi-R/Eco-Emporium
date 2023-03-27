@@ -4,7 +4,13 @@ body {
     padding: 0; 
     background-size: cover;  
     font-family: 'Work Sans', sans-serif; 
-}  
+    font-weight: 200;
+} 
+
+h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
 
 .topnav {  
     background-color: rgb(208,244,188);  
@@ -48,14 +54,15 @@ body {
 
 .main-page {
     margin-top: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: center;
     display: flex;
     flex-direction: row;
 }
 
 .item-carousel {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -66,7 +73,7 @@ body {
 }
 
 .item-image {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 560px;
     height: 560px;
     margin-left: 10px;
@@ -80,35 +87,39 @@ body {
 }
 
 .item-details {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     flex-direction: column;
     float: right;
-    height: 500px;
-    width: 600px;
-    margin-left: 20px;
+    width: 490px;
+    height: auto;
+    margin-left: 50px;
 }
 
 .image-title {
     margin-top: 30px;
+    margin-bottom: 0px;
     display: flex;
     float:right;
     text-align: center;
     font-size: 30px;
 }
 
-.item-price {
-    width:200px;
-    text-align: center;
+.item-price, .item-bought {
+    width: auto;
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
 }
 
 .item-buttons {
-    border: 2px solid black;
     display: flex;
-    flex-direction: row;
-    width: 300px;
+    flex-direction: column;
+    width: 100%;
     justify-content: space-between;
+    padding-bottom: 20px;
 }
 
 .quick-actions {
