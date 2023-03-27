@@ -86,6 +86,14 @@ h2 {
     align-self: center;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+    transition: .3s ease;
+    background-color: transparent;
+}
+
 .item-details {
     /* border: 2px solid black; */
     display: flex;
