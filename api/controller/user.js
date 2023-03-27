@@ -9,7 +9,6 @@ async function register(req, res) {
   try {
     data.password = await bcrypt.hash(data.password, salt);
     const result = await User.create(data);
-    result.password = result.password.trim();
     res.status(201).send(result);
   } catch (e) {
     console.log(e);

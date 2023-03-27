@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users (
     user_id INT GENERATED ALWAYS AS IDENTITY,
     username VARCHAR(30) UNIQUE NOT NULL,
-    password CHAR(100) NOT NULL,
+    password TEXT NOT NULL,
     is_admin BOOLEAN DEFAULT FALSE,
     PRIMARY KEY (user_id)
 );
