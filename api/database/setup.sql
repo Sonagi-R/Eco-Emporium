@@ -22,7 +22,7 @@ VALUES
     ),
     (
         'user',
-        'user@test123.com'
+        'user@test123.com',
         '$2b$10$Rg2AXCBalbVJb8p1eQZOL.Aq/Ir/RRU8tT17OvBHZtpSqL6mM4YJO',
         false
     );
