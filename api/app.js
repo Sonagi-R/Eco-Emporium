@@ -16,7 +16,6 @@ app.use(
     credentials: true,
   })
 );
-
 app.use(express.json());
 app.use(
   session({
@@ -27,7 +26,14 @@ app.use(
       sameSite: "none", 
       secure: true 
     },
+    cookie: { 
+      maxAge: 86400000, 
+      expires: new Date(Date.now() + 86400000), 
+      sameSite: "none", 
+      secure: true 
+    },
     saveUninitialized: false,
+    resave: true,
     resave: true,
     store,
   })
