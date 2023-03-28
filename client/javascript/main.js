@@ -1,8 +1,12 @@
+const username = document.querySelector("#username")
+
 const productsPerPage = 14;
 const productList = document.getElementById('product-list');
 
 const products = productList.querySelectorAll('.product');
 const numPages = Math.ceil(products.length / productsPerPage);
+
+const user = JSON.parse(localStorage.getItem("user"))
 
 const paginationContainer = document.getElementById('pagination');
 for (let i = 1; i <= numPages; i++) {
@@ -38,4 +42,5 @@ function showPage(pageNumber) {
   });
 }
 
+username.innerHTML = user + `<i class="fa-solid fa-user"></i>`
 showPage(1);
