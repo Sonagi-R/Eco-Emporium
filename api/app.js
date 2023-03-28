@@ -10,17 +10,24 @@ const auth = require("./middleware/auth");
 
 const app = express();
 
-app.use(cors({
-  origin: 'http://127.0.0.1:5500',
-  credentials: true,
-}));
-app.use(express.json()); 
+app.use(
+  cors({
+    origin: "http://localhost:2000",
+    credentials: true,
+  })
+);
+app.use(express.json());
 app.use(
   session({
     secret: process.env.SECRET,
-    cookie: { maxAge: 30000, sameSite: 'None', secure: true },
+    cookie: { 
+      maxAge: 86400000, 
+      expires: new Date(Date.now() + 86400000), 
+      sameSite: "none", 
+      secure: true 
+    },
     saveUninitialized: false,
-    resave: false,
+    resave: true,
     store,
   })
 );
