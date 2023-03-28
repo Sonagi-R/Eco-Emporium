@@ -19,8 +19,9 @@ const logIn = async (data) => {
   const res = await fetch(`https://localhost:8080/auth/login`, options);
 
   if (res.ok) {
-    console.log("Successfuly logged in:", data);
-    //window.location.assign("main.html")
+    console.log("Successfuly logged in:", data.username);
+    localStorage.setItem("user", JSON.stringify(data.username))
+    window.location.assign("main.html")
   } else {
     console.log("Something failed, very sad! :(")
   }
