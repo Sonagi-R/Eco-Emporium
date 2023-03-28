@@ -20,8 +20,7 @@ describe(endpoint, () => {
         it('should return all shop items', async () => {
 
             const res = await request.get(endpoint);
-            
-            expect(res.status).toBe(200);
+            expect(res.statusCode).toEqual(200);
             expect(Array.isArray(res.body)).toBeTruthy();
         })
     })
