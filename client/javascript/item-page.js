@@ -1,8 +1,25 @@
 const itemImage = document.querySelectorAll(".carousel-image")
 const currentImage = document.querySelector(".current-image")
+const itemTitle = document.querySelector('.item-title')
+const price = document.querySelector('#price')
+const description = document.querySelector('#description')
 const previous = document.querySelector("#previous")
 const next = document.querySelector("#next")
 const addToCart = document.querySelector('#add-to-cart')
+
+
+fetch(`https://localhost:8080/items/${localStorage.item_id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+    currentImage.src = `${data.image_url}`
+    itemTitle.textContent = `${data.name}`
+    priceString = data.price.toString()
+    dotPosition = priceString.length - 2
+    correctPrice = priceString.slice(0,dotPosition) + '.' + priceString.slice(dotPosition)
+    price.textContent = `${correctPrice}`
+    description.textContent = `${data.description}`
+  })
 
 const allSrc = []
 let checkOutIncrementer = 0
