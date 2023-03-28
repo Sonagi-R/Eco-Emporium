@@ -1,0 +1,41 @@
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1, h2 {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+main{
+    flex-basis: 40%;
+    height: 65dvh;
+    margin-right: 4%;
+}
+
+.information{
+    height: 45%;
+    width: 100%;
+    padding: 2dvh;
+    border: 1px solid grey;
+    margin-bottom: 5%;
+}
+
+input, label{
+    display: block;
+}
+
+.input{
+    display: inline-block;
+    width: 35%;
+}
+
+article{
+    flex-basis: 30%;
+    border: 1px solid black;
+    height: 75dvh;
+}
