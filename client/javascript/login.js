@@ -19,23 +19,23 @@ signInBtn.addEventListener("click", () => {
 const logIn = async (data) => {
   const options = {
     method: "POST",
-    credentials: 'include',
+    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
   };
 
   const res = await fetch(`https://localhost:8080/auth/login`, options);
 
   if (res.ok) {
     console.log("Successfuly logged in:", data.username);
-    localStorage.setItem("user", JSON.stringify(data.username))
-    window.location.assign("main.html")
+    localStorage.setItem("user", JSON.stringify(data.username));
+    window.location.assign("main.html");
   } else {
-    console.log("Something failed, very sad! :(")
+    console.log("Something failed, very sad! :(");
   }
-}
+};
 
 const getLogFormData = () => {
   let formData = {};
@@ -50,7 +50,7 @@ signInForm.addEventListener("submit", async (e) => {
 
   const data = getLogFormData();
   await logIn(data);
-  signInForm.reset()
+  signInForm.reset();
 });
 
 // sign up
@@ -58,25 +58,22 @@ signInForm.addEventListener("submit", async (e) => {
 const signUp = async (data) => {
   const options = {
     method: "POST",
-    credentials: 'include',
+    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data)
-
+    body: JSON.stringify(data),
   };
-
-  console.log(data)
 
   const res = await fetch(`https://localhost:8080/auth/register`, options);
 
   if (res.ok) {
     console.log("Successfuly signed up:", data.username);
-    window.location.assign("/")
+    window.location.assign("/");
   } else {
-    console.log("Something failed, very sad! :(")
+    console.log("Something failed, very sad! :(");
   }
-}
+};
 
 const getRegFormData = () => {
   let formData = {};
@@ -90,6 +87,22 @@ signUpForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const data = getRegFormData();
-  await signUp(data);
-  signUpForm.reset()
+
+  if (data["password"] === data["conPassword"] && ValidateEmail(data["email"])) {
+    await signUp(data);
+    signUpForm.reset();
+  } else {
+    alert(
+      "There is a problem with your email or password!"
+    );
+  }
 });
+
+function ValidateEmail(email) {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (email.match(mailformat)) {
+    return true;
+  } else {
+    return false;
+  }
+}
