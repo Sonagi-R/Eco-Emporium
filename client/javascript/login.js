@@ -4,6 +4,18 @@ const formCover = document.querySelector("#form-cover");
 const signInForm = document.querySelector("#sign-in-form");
 const signUpForm = document.querySelector("#sign-up-form");
 
+signUpBtn.addEventListener("click", () => {
+  formCover.classList.add("active");
+  signInForm.reset();
+});
+
+signInBtn.addEventListener("click", () => {
+  formCover.classList.remove("active");
+  signUpForm.reset();
+});
+
+//login
+
 const logIn = async (data) => {
   const options = {
     method: "POST",
@@ -25,16 +37,6 @@ const logIn = async (data) => {
   }
 }
 
-signUpBtn.addEventListener("click", () => {
-  formCover.classList.add("active");
-  signInForm.reset();
-});
-
-signInBtn.addEventListener("click", () => {
-  formCover.classList.remove("active");
-  signUpForm.reset();
-});
-
 const getLogFormData = () => {
   let formData = {};
   const inputs = document.querySelectorAll(".sign-in-input");
@@ -49,4 +51,45 @@ signInForm.addEventListener("submit", async (e) => {
   const data = getLogFormData();
   await logIn(data);
   signInForm.reset()
+});
+
+// sign up
+
+const signUp = async (data) => {
+  const options = {
+    method: "POST",
+    credentials: 'include',
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data)
+
+  };
+
+  console.log(data)
+
+  const res = await fetch(`https://localhost:8080/auth/register`, options);
+
+  if (res.ok) {
+    console.log("Successfuly signed up:", data.username);
+    window.location.assign("/")
+  } else {
+    console.log("Something failed, very sad! :(")
+  }
+}
+
+const getRegFormData = () => {
+  let formData = {};
+  const inputs = document.querySelectorAll(".sign-up-input");
+  inputs.forEach((input) => (formData[input.name] = input.value));
+
+  return formData;
+};
+
+signUpForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = getRegFormData();
+  await signUp(data);
+  signUpForm.reset()
 });
