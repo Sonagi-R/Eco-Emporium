@@ -1,6 +1,9 @@
-const express = require('express')
-const router = express.Router()
-const items = require('../controller/item')
+const { Router} = require('express');
+
+const itemController = require('../controller/item.js');
+
+const itemRouter = Router();
+
 
 itemRouter.get('/', itemController.index);
 itemRouter.get('/:id', itemController.getOneById);

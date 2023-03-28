@@ -1,10 +1,21 @@
 require('dotenv').config()
 const app = require('../app.js');
 const supertest = require('supertest-session');
+const app = require('../app.js');
+const supertest = require('supertest-session');
 
 const request = supertest(app);
 
 
+describe('Item Routes - /items', () => {
+    it('Should return all shop items', async () => {
+        const session = ({
+            secret: process.env.SECRET,
+            saveUninitialized: false,
+            resave: true,
+          })
+        const res = await request.get('/items');
+        console.log(res.body);
 describe('Item Routes - /items', () => {
     it('Should return all shop items', async () => {
         const session = ({
@@ -28,8 +39,6 @@ describe('Item Routes - /items', () => {
 
 
 
-
-  });
 
 // const app = require('./app.js');
 // const supertest = require('supertest-session');
