@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/login.css" />
     <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
     <script defer src="./javascript/login.js"></script>
+    <script defer src="./javascript/checkUser.js"></script>
     <title>Eco Emporium</title>
   </head>
   <body>
@@ -39,10 +40,10 @@
           <div class="form sign-up-form">
             <form id="sign-up-form">
               <h3>Sign up</h3>
-              <input class="sign-up-input" type="text" placeholder="Username">
-              <input class="sign-up-input" type="text" placeholder="Email">
-              <input class="sign-up-input" type="password" placeholder="Password">
-              <input class="sign-up-input" type="password" placeholder="Confirm Password">
+              <input class="sign-up-input" type="text" name="username" placeholder="Username">
+              <input class="sign-up-input" type="text" name="email" placeholder="Email">
+              <input class="sign-up-input" type="password" name="password" placeholder="Password">
+              <input class="sign-up-input" type="password" name="conPassword" placeholder="Confirm Password">
               <input id="sign-up-submit" type="submit" value="Register">
             </form>
           </div>

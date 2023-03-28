@@ -2,8 +2,6 @@ const express = require('express')
 const router = express.Router()
 const items = require('../controller/item')
 
-
-
 router.get('/', items.index)
 
 router.get('/:id', items.getOneById)
