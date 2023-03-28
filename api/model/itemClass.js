@@ -1,15 +1,15 @@
 const db = require('../database/connect')
 
 class Item {
-    constructor({ name, description, price, image_url }) {
+    constructor({ name, price, description, image_url }) {
         this.name = name;
-        this.description = description;
         this.price = price;
+        this.description = description; 
         this.image_url = image_url;
     }
 
     static async showAll() {
-        const response = await db.query('SELECT * FROM items ORDER BY item_id');
+        const response = await db.query('SELECT * FROM items ORDER BY item_id;');
         return response.rows.map(i => new Item(i));
     }
 
@@ -47,4 +47,4 @@ class Item {
     }
 }
 
-module.exports = Item
+module.exports = Item;
