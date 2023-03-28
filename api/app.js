@@ -1,12 +1,31 @@
-const express = require('express')
-const cors = require('cors')
+const express = require("express");
+const cors = require("cors");
+const session = require("express-session");
+const store = new session.MemoryStore();
 
-const items = require('./routes/item')
+const items = require("./routes/item");
+const users = require("./routes/user");
 
-const app = express()
-app.use(cors())
-app.use(express.json())
+const auth = require("./middleware/auth");
 
-app.use('/items', items)
+const app = express();
 
-module.exports = app
+app.use(cors({
+  origin: 'http://127.0.0.1:5500',
+  credentials: true,
+}));
+app.use(express.json()); 
+app.use(
+  session({
+    secret: process.env.SECRET,
+    cookie: { maxAge: 30000, sameSite: 'None', secure: true },
+    saveUninitialized: false,
+    resave: false,
+    store,
+  })
+);
+
+app.use("/auth", users);
+app.use("/items", auth, items);
+
+module.exports = app;

@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #fafafa;
+  transition: 500ms;
+}
+
+header > a{
+  text-decoration: none;
+  color: #202020;
+}
+
+.h1-eco {
+  color: #69b161;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 25px 0;
+  color: #202020;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer a {
+  color: #202020;
+  text-decoration: none;
+}
