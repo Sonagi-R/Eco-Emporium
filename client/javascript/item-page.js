@@ -2,8 +2,10 @@ const itemImage = document.querySelectorAll(".carousel-image")
 const currentImage = document.querySelector(".current-image")
 const previous = document.querySelector("#previous")
 const next = document.querySelector("#next")
+const addToCart = document.querySelector('#add-to-cart')
 
 const allSrc = []
+const checkOutIncrementer = 0
 
 itemImage.forEach((item) => {
   allSrc.push(item["src"])
@@ -37,6 +39,14 @@ next.addEventListener("click", e => {
   }
 })
 
+addToCart.addEventListener('click', (idx) => {
+  fetch(`https://localhost:7000/items/${idx}`)
+    .then((response) => response.json())
+    .then((data) => {
+      localStorage.setItem(data)
+    })
+  checkOutIncrementer += 1
+})
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function myFunction() {
