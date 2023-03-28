@@ -26,7 +26,7 @@ const logIn = async (data) => {
     body: JSON.stringify(data)
   };
 
-  const res = await fetch(`https://localhost:8080/auth/login`, options);
+  const res = await fetch(`https://localhost:7000/auth/login`, options);
 
   if (res.ok) {
     console.log("Successfuly logged in:", data.username);

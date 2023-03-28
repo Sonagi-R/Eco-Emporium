@@ -5,7 +5,8 @@ const next = document.querySelector("#next")
 const addToCart = document.querySelector('#add-to-cart')
 
 const allSrc = []
-const checkOutIncrementer = 0
+let checkOutIncrementer = 0
+const idx = 2
 
 itemImage.forEach((item) => {
   allSrc.push(item["src"])
@@ -40,12 +41,16 @@ next.addEventListener("click", e => {
 })
 
 addToCart.addEventListener('click', (idx) => {
-  fetch(`https://localhost:7000/items/${idx}`)
-    .then((response) => response.json())
-    .then((data) => {
-      localStorage.setItem(data)
-    })
   checkOutIncrementer += 1
+  fetch(`https://localhost:7000/items/2`)
+    .then((response) => response.json())
+  .then((data) => {
+      //save data to localStorage
+    localStorage.setItem(data)
+    //populate page info with product object from database
+
+    })
+  //add new key to object in localstorage set to 1 after click and increment
 })
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
