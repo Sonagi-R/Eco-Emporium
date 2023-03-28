@@ -86,6 +86,11 @@ h2 {
     align-self: center;
 }
 
+#current-image{
+    height: 100%;
+    width: 100%;
+}
+
 .overlay {
     position: absolute;
     height: 100%;

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/checkout.css" />
+    <script src="javascript/checkout.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><span>Eco</span> Emporium</h1>
+    <h2>Checkout</h2>
+    <p>When in Doubt, Dont Throw it out</p>
+
+    <main>
+      <div class="personal information">
+        <h3>1. PERSONAL INFORMATION</h3>
+        <div class="input">
+          <label for="first-name">FIRST NAME</label>
+          <input type="text" name="first-name" placeholder="Forename" />
+        </div>
+
+        <div class="input">
+          <label for="last-name">LAST NAME</label>
+          <input type="text" name="last-name" placeholder="Surname" />
+        </div>
+
+        <div class="input" id="emailInput">
+          <label for="email">EMAIL</label>
+          <input type="email" name="email" id="email" placeholder="Enter your Email" />
+        </div>
+      </div>
+
+      <div class="shipping information">
+        <h3>2. SHIPPING ADDRESS</h3>
+        <div class="input">
+          <label for="address-line-1">address line 1</label>
+          <input type="text" name="address-line-1" />
+        </div>
+
+        <div class="input">
+          <label for="address-line-2">address line 2</label>
+          <input type="text" name="address-line-2" />
+        </div>
+
+        <div class="input">
+          <label for="city">CITY</label>
+          <input type="text" name="city" />
+        </div>
+
+        <div class="input">
+          <label for="zip-postal">ZIP / POSTAL</label>
+          <input type="text" name="zip-postal" />
+        </div>
+      </div>
+
+      <div class="billing information">
+        <h3>3. BILLING INFORMATION</h3>
+        <div class="input" id="card-number">
+          <label for="credit-card">CREDIT CARD NUMBER</label>
+          <input type="text" name="credit-card" placeholder="card placeholder" id="card-input" />
+        </div>
+
+        <div class="input card">
+          <label for="month">MONTH</label>
+          <input type="text" name="month" placeholder="Surname" />
+        </div>
+
+        <div class="input card">
+          <label for="year">YEAR</label>
+          <input type="email" name="year" placeholder="Enter your Email" />
+        </div>
+
+        <div class="input card">
+          <label for="cvc">CVC</label>
+          <input type="email" name="cvc" placeholder="Enter your Email" />
+        </div>
+      </div>
+    </main>
+
+    <div id="order-summary">
+      <article>
+        <img src="/client/assets/326761808_5944029768973540_8834118592123362218_n-removebg-preview (1).png" alt="" />
+        <h4>ORDER SUMMARY</h4>
+        <div class="item">
+          <h5>Item Name</h5>
+          <h5>Price</h5>
+        </div>
+        <div class="item">
+          <h5>Item Name</h5>
+          <h5>Price</h5>
+        </div>
+        <div class="item">
+          <h5>Item Name</h5>
+          <h5>Price</h5>
+        </div>
+        <div class="item">
+          <h5>Item Name</h5>
+          <h5>Price</h5>
+        </div>
+        <div id="total">
+          <h3>Total</h3>
+          <h3>price</h3>
+        </div>
+      </article>
+      <button>Complete Purchase</button>
+    </div>
+  </body>
+</html>
