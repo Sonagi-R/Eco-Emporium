@@ -14,8 +14,6 @@ const logIn = async (data) => {
     body: JSON.stringify(data)
   };
 
-  console.log(options.body)
-
   const res = await fetch(`https://localhost:8080/auth/login`, options);
 
   if (res.ok) {
