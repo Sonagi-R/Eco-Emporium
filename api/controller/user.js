@@ -49,4 +49,14 @@ async function logout(req, res) {
   }
 }
 
-module.exports = { register, login, logout };
+async function user(req, res) {
+  if (req.session.authenticated) {
+    return res.status(200).json(req.session);
+  } else {
+    return res
+      .status(400)
+      .json({ message: "You must be logged in to perform this function!" });
+  }
+}
+
+module.exports = { register, login, logout, user };
