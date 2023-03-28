@@ -24,6 +24,7 @@ async function register(req, res) {
     console.log(e);
     res.status(401).send({ error: e.message });
   }
+
 }
 
 async function login(req, res) {
