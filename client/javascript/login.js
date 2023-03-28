@@ -16,7 +16,7 @@ const logIn = async (data) => {
 
   console.log(options.body)
 
-  const res = await fetch(`http://localhost:8080/auth/login`, options);
+  const res = await fetch(`https://localhost:8080/auth/login`, options);
 
   if (res.ok) {
     console.log("Successfuly logged in:", data);
