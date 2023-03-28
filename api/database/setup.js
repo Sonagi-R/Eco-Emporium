@@ -1,8 +1,8 @@
-require('dotenv').config();
+require('dotenv').config()
 const fs = require('fs');
 const db = require('./connect');
 
-const sql = fs.readFileSync('./api/database/setup.sql').toString();
+const sql = fs.readFileSync('./database/setup.sql').toString();
 
 db.query(sql)
     .then(data => {

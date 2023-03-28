@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -L ./api/index.js",
-    "setup-db": "node ./api/database/setup.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -L ./index.js",
+    "setup-db": "node ./database/setup.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "dotenv": "^16.0.3",
     "jest": "^29.5.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
   }
 }
