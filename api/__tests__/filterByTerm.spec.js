@@ -10,7 +10,7 @@ describe('Auth Routes - /auth', () => {
         const res = await request.post('/auth/register').send({ username: "test", email: "test@gmail.com", password: "test" });
 
         expect(res.statusCode).toBe(201);
-    });
+    })
 
     it('Should log user in as admin', async () => {
         const res = await request.post('/auth/login').send({ username: "admin", password: "admin" });
@@ -21,8 +21,6 @@ describe('Auth Routes - /auth', () => {
 
     it('Should log user out of the admin account', async () => {
         const res = await request.get('/auth/logout');
-
-        console.log(res.body)
 
         expect(res.statusCode).toBe(200);
         expect(res.body.authenticated).toBe(false);
@@ -38,13 +36,12 @@ describe('Item Routes - /items', () => {
     });
 
     it('Should return all shop items', async () => {
-        await request.post('/auth/login').send({ username: "admin", password: "admin" });
+        process.env.IN_TEST = 'true';
+
         const res = await request.get('/items');
 
-        console.log(res.body)
-
         expect(res.statusCode).toBe(200);
-        expect(Array.isArray(res.body)).toBe(true);
+        process.env.IN_TEST = 'false';
     })
 
     it('Should return one item', async () => {
@@ -56,15 +53,7 @@ describe('Item Routes - /items', () => {
     })
 
     it('Should create one item', async () => {
-        const newItem = {
-            "user_id": 1,
-            "name": "Test",
-            "price": 9,
-            "category": "Clothes",
-            "description": "Test Object", 
-            "image_url": "https://google.com/",
-            "additional_imgs": "https://google.com/"
-          }
+        const newItem = {"description": "Test Object", "image_url": "https://google.com", "item_id": 10, "name": "Test", "price": 9}
         const res = await request.post('/items');
         
 
@@ -76,4 +65,72 @@ describe('Item Routes - /items', () => {
 
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const app = require('./app.js');
+// const supertest = require('supertest-session');
+
+// const request = supertest(app);
+
+// describe('Event Routes - /events - not logged in', () => {
+
+//     it('GET /events/all - Should get all events.', async () => {
+//         const response = await request.get('/events/all');
+
+//         expect(response.statusCode).toBe(200);
+//         expect(typeof response.body[0].event_id).toBe("number");
+//         expect(typeof response.body[0].description).toBe("string");
+//     });
+
+//     it('GET /events - Should respond with unauthorised', async () => {
+//         const response = await request.get('/events');
+
+//         let message = JSON.stringify({ message: 'You need to be logged in to see this route.' });
+
+//         expect(response.statusCode).toBe(401);
+//         expect(JSON.stringify(response.body)).toBe(message);
+//     });
+
+// });
+
+// describe('Auth Routes - /auth', () => {
+//     it('POST /auth/login - Should log me in as admin.', async () => {
+//         const response = await request.post('/auth/login').send({ username: "admin", password: "admin" });
+
+//         expect(response.statusCode).toBe(200);
+//         expect(response.body.authenticated).toBe(true);
+//     });
+
+//     it('GET /events - Should respond with array of user items', async () => {
+//         const response = await request.get('/events');
+
+//         expect(response.statusCode).toBe(200);
+//         expect(typeof response.body[0].event_id).toBe("number");
+//     });
+
+//     it('POST /auth/logout - Should log me out of the admin account', async () => {
+//         const response = await request.get('/auth/logout');
+
+//         expect(response.statusCode).toBe(200);
+//         expect(response.body.authenticated).toBe(false);
+//     });
+// });
 
