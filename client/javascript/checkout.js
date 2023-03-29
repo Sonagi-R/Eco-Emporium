@@ -1,5 +1,9 @@
 const article = document.querySelector('#checkoutList')
 const totalPrice = document.querySelector('#totalPrice')
+const complete = document.querySelector('#complete')
+complete.addEventListener('click', () => {
+    localStorage.clear();
+})
 let priceTally = 0
 
 const checkoutData = JSON.parse(localStorage.checkout)
@@ -25,3 +29,4 @@ function addDotToPrice(priceTally) {
 }
 
 totalPrice.textContent = `${addDotToPrice(priceTally)}`
+
