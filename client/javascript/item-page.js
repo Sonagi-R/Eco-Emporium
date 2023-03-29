@@ -36,7 +36,7 @@ if (!localStorage.checkout){
 
 
 
-fetch(`https://localhost:8080/items/${localStorage.item_id}`)
+fetch(`https://localhost:8080/items/${localStorage.item_id}`, { credentials: "include" })
   .then((response) => response.json())
   .then((data) => {
     currentImage.src = `${data.image_url}`
