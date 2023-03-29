@@ -25,6 +25,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "express-validator": "^6.15.0",
     "live-server": "^1.2.2",
     "pg": "^8.10.0"
   },
