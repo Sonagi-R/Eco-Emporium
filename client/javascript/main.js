@@ -6,6 +6,7 @@ const productList = document.getElementById('product-list');
 const products = productList.querySelectorAll('.product');
 const productImages = document.querySelectorAll('.productImage')
 const productNames = document.querySelectorAll('.productName')
+const productPrice = document.querySelectorAll('.productPrice')
 const numPages = Math.ceil(products.length / productsPerPage);
 
 const user = JSON.parse(localStorage.getItem("user"))
@@ -55,7 +56,11 @@ fetch(`https://localhost:8080/items`, { credentials: "include" })
     for (let i = 0; i < 10; i++){
       productImages[i].src = `${data[i].image_url}`
       productNames[i].textContent = `${data[i].name}`
-      products[i].setAttribute('id',`${data[i].item_id}`)
+      products[i].setAttribute('id', `${data[i].item_id}`)
+      priceString = data[i].price.toString()
+      dotPosition = priceString.length - 2
+      correctPrice = priceString.slice(0,dotPosition) + '.' + priceString.slice(dotPosition)
+      productPrice[i].textContent = `${correctPrice}`
     }
   })
 
