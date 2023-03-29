@@ -61,7 +61,7 @@
       <div class="products-panel panel">
         <div class="products-panel-header">
           <div class="product-category-name">Clothes</div>
-          <button>New listing</button>
+          <button id="new-listing-btn">New listing</button>
         </div>
         <div class="product-list" id="product-list">
           <div class="product">
@@ -213,6 +213,53 @@
           <div class="pagination" id="pagination"></div>
         </footer>
       </div>
+    </div>
+    <div class="overlay" id="overlay">
+      <form class="form-container">
+        <div class="form-group">
+          <label for="main-image-input">Item Image:</label>
+          <input type="file" id="main-image-input" name="main-image-input" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="item-name-input">Item Name:</label>
+          <input type="text" id="item-name-input" name="item-name-input" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="item-price-input">Item Price:</label>
+          <input type="number" id="item-price-input" name="item-price-input" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="description-input">Description:</label>
+          <textarea id="description-input" name="description-input" required></textarea>
+        </div>
+      
+        <div class="form-group">
+          <label for="category-input">Category:</label>
+          <select id="category-input" name="category-input" required>
+            <option value="clothes">Clothes</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="toys-games">Toys & Games</option>
+            <option value="pet-supplies">Pet Supplies</option>
+            <option value="sports-recreation">Sports & Recreation</option>
+            <option value="outdoor-garden">Outdoor & Garden</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      
+        <div class="form-group">
+          <label for="additional-images-input">Additional Images:</label>
+          <input type="file" id="additional-images-input" name="additional-images-input" multiple required>
+        </div>
+      
+        <div class="buttons">
+          <input type="submit" value="Submit" class="form-button">
+          <button style="background-color: #c24f3f" class="form-button" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
     </div>
   </body>
 </html>

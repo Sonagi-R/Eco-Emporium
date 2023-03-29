@@ -1,5 +1,9 @@
 const username = document.querySelector("#username")
 
+const newListingBtn = document.querySelector("#new-listing-btn")
+const cancelBtn = document.querySelector("#cancel-btn")
+const overlay = document.querySelector("#overlay")
+
 const productsPerPage = 14;
 const productList = document.getElementById('product-list');
 
@@ -103,4 +107,13 @@ categories.forEach((category) => {
       productPrice[i].textContent = `${correctPrice}`
     }
   } )
+})
+
+newListingBtn.addEventListener("click", () => {
+  overlay.style.display = "block";
+})
+
+cancelBtn.addEventListener("click", (e) => {
+  e.preventDefault()
+  overlay.style.display = "none";
 })
