@@ -154,20 +154,20 @@ header > span {
 .listings {
   position: relative;
   padding: 15px;
-  height: 150px;
-  background: red;
+  height: 175px;
+  background: #f3f3f3;
   width: 80%;
   transition: 500ms;
-  cursor: pointer;
   display: flex;
   flex-direction: row;
   margin-bottom: 50px;
   border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .listings > img {
   width: 20%;
-  background: #202020;
+  cursor: pointer;
 }
 
 .listings p {
@@ -184,4 +184,17 @@ header > span {
   color: #fafafa;
   font-size: 16px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.active-label {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.item-info {
+  font-size: 18px;
 }
