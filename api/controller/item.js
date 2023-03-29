@@ -1,11 +1,11 @@
-const Item = require('../Model/itemClass')
+const Item = require('../model/itemClass.js')
 
 async function index(req, res) {
     try {
         const items = await Item.showAll();
-        res.status(200).json(items)
+        res.status(200).json(items);
     } catch (error) {
-        res.status(500).send({error:'Error with the item database'})
+        res.status(401).send({error:'Cannot access without logging in'})
     }
 }
 
