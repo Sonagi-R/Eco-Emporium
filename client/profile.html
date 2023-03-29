@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/profile.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <a href="main.html"
+        ><h1><span class="h1-eco">Eco</span> Emporium</h1></a
+      >
+      <div class="user">
+        <span id="sign-out-btn">Sign out</span>
+        <span id="username">Username<i class="fa-solid fa-user"></i></span>
+      </div>
+    </header>
+    <div class="dashboard">
+      <div class="user-panel panel">
+        <div class="user-list">
+          <div class="user-title">Users Profile</div>
+          <div class="user-options">
+            <div class="user-profile-pic">
+              <div></div>
+            </div>
+            <div class="user-profile-inputs">
+              <form>
+                <input class="update-input" type="text" name="username" placeholder="Username">
+                <input class="update-input" type="text" name="email" placeholder="Email">
+                <input class="update-input" type="password" name="password" placeholder="Password">
+                <input class="update-input" type="password" name="conPassword" placeholder="Confirm Password">
+                <input id="update-submit" type="submit" value="Update">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="listings-panel panel">
+        <div class="listings-panel-header">
+          <div class="listings-category-name">Users Listings</div>
+          <button>New listing</button>
+        </div>
+        <div class="listings-list" id="listings-list">
+          <div class="listings">
+            <img src="">
+            <div class="listing-info">
+              <p>Item name</p>
+              <p>Item desc</p>
+              <p>Item price</p>
+              <p>Active</p>
+              <button>Delete listing</button>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="pagination" id="pagination">
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
