@@ -27,10 +27,12 @@ const logIn = async (data) => {
 
   const res = await fetch(`https://localhost:8080/auth/login`, options);
 
+  const { user } = await res.json();
+
   if (res.ok) {
-    console.log(`Successfully logged in: ${data.username}`);
-    localStorage.setItem("user", JSON.stringify(data.username));
-    localStorage.setItem("user_id", JSON.stringify(data.user_id));
+    console.log(`Successfully logged in: ${user.username}`);
+    localStorage.setItem("user", JSON.stringify(user.username));
+    localStorage.setItem("user_id", JSON.stringify(user.user_id));
     window.location.assign("main.html");
   } else {
     console.log("Something failed, very sad! :(");

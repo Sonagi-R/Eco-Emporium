@@ -168,6 +168,7 @@ header > span {
 .listings > img {
   width: 20%;
   cursor: pointer;
+  object-fit: cover;
 }
 
 .listings p {
@@ -187,14 +188,7 @@ header > span {
   cursor: pointer;
 }
 
-.active-label {
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
-  padding: 10px;
-  font-size: 24px;
-}
-
 .item-info {
   font-size: 18px;
+  width: 80%;
 }

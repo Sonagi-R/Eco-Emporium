@@ -19,15 +19,25 @@ async function getOneById(req, res) {
     }
 }
 
+async function getByUserId(req, res) {
+    const idx= req.params.id
+    try {
+        const item = await Item.getByUserId(idx)
+        res.status(200).send(item)
+    } catch (error) {
+        res.status(404).send({error:"item not found"})
+    }
+}
+
 async function create(req, res) {
     const item = req.body
     try {
         console.log("create triggered")
         const newItem = await Item.create(item)
-        res.status(201).send(newItem)
+        res.status(201).json(newItem)
     } catch (error) {
         console.log("error triggered")
-        res.status(500).send({error: 'Error with the item database'})
+        res.status(500).json({error: 'Error with the item database'})
     }
 }
 
@@ -54,4 +64,4 @@ async function update(req, res) {
     }
 }
 
-module.exports = {index, getOneById, create, destroy, update}
+module.exports = {index, getOneById, getByUserId, create, destroy, update}
