@@ -49,11 +49,13 @@ async function login(req, res) {
 
 async function logout(req, res) {
   if (req.session.authenticated) {
+    console.log('logout cont')
     req.session.authenticated = false;
     req.session.user = {};
 
     return res.status(200).json(req.session);
   } else {
+    console.log('logout cont else')
     return res
       .status(400)
       .json({ message: "You must be logged in to perform this function!" });

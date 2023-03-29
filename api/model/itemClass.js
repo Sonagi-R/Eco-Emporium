@@ -19,21 +19,19 @@ class Item {
     static async getOneById(idx) {
         const response = await db.query('SELECT * FROM items WHERE item_id = $1;', [idx])
         if (response.rows.length != 1) {
-            throw new Error('unable to lacte item')
+            throw new Error('unable to locate item')
         }
         return new Item(response.rows[0])
     }
 
     static async create(newItem) {
         const { name, category, price, description, image_url, additional_imgs } = newItem
-        console.log(newItem)
-        console.log('im here')
         const response = await db.query('INSERT INTO items (name, category, price, description, image_url, additional_imgs) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;', [name, category, price, description, image_url, additional_imgs])
-        console.log(response)
+     
         if (response.rows.length != 1) {
             throw new Error('Could not add item to the database')
         }
-        return new Item(response.rows[0])
+        return response.rows.map(j => new Item(j));
     }
 
     async destroy() {
