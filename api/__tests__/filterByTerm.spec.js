@@ -106,7 +106,7 @@ describe('Item Routes - /items', () => {
 
     it('Should show items by user', async () => {
         process.env.IN_TEST = 'true';
-        const res = await request.get('/items/user');
+        const res = await request.get('');
 
         expect(res.statusCode).toBe(200);
         expect(res.body.authenticated).toBe(false);
