@@ -1,38 +1,26 @@
-const supertest = require('supertest');
-const expect = require('expect');
-const app = require('../app');
-const db = require('../database/connect')
 require('dotenv').config()
+const app = require('../app.js');
+const supertest = require('supertest-session');
+const app = require('../app.js');
+const supertest = require('supertest-session');
 
 const request = supertest(app);
-const endpoint = '/items'
 
+describe('Item Routes - /items', () => {
+    it('Should return all shop items', async () => {
+        const session = ({
+            secret: process.env.SECRET,
+            saveUninitialized: false,
+            resave: true,
+          })
+        const res = await request.get('/items');
+        console.log(res.body);
 
-describe(endpoint, () => {
-    beforeAll(async () => {
-        await db.connect();
+        expect(res.statusCode).toBe(200);
+        expect(Array.isArray(res.body)).toBe(true);
     })
 
-    afterAll(async () => {
-    })
-
-    describe('GET /', () => {
-        it('should return all shop items', async () => {
-
-            const res = await request.get(endpoint);
-            expect(res.statusCode).toEqual(200);
-            expect(Array.isArray(res.body)).toBeTruthy();
-        })
-    })
-
-
-  });
-
-
-
-
-
-
+});
 
 
 
@@ -84,3 +72,4 @@ describe(endpoint, () => {
 //         expect(response.body.authenticated).toBe(false);
 //     });
 // });
+
