@@ -25,9 +25,14 @@ class Item {
         return new Item(response.rows[0])
     }
 
+    static async getByUserId(idx) {
+        const response = await db.query('SELECT * FROM items WHERE user_id = $1;', [idx])
+        return response.rows.map(i => new Item(i));
+    }
+
     static async create(newItem) {
-        const { user_id, name, category, price, description, image_url, additional_imgs } = newItem
-        const response = await db.query('INSERT INTO items (user_id, name, category, price, description, image_url, additional_imgs) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;', [user_id, name, category, price, description, image_url, additional_imgs])
+        const { name, user_id, category, price, description, image_url, additional_imgs } = newItem
+        const response = await db.query('INSERT INTO items (name, user_id, category, price, description, image_url, additional_imgs) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;', [name, user_id, category, price, description, image_url, additional_imgs])
      
         if (response.rows.length != 1) {
             throw new Error('Could not add item to the database')

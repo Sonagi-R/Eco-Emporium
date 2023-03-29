@@ -91,7 +91,7 @@ input{
 }
 
 button{
-    width: 20dvw;
+    width: 25dvw;
     height: 5dvh;
     margin-top: 1dvh;
     border: none;
@@ -116,23 +116,30 @@ img{
 
 h4{
     border-bottom: 1px solid rgba(128, 128, 128, 0.336);
+    background-color: #69b161;
+    color: white;
     text-align: center;
-    width: 85%;
-    padding-bottom: 2dvh;
+    width: 100%;
+    padding: 1dvh 0;
     font-weight: 600;
+    margin-bottom: auto;
 }
 
 .item{
     font-family: sans-serif;
-    font-weight: 400;
-    width: 90%;
+    font-weight: 200;
+    font-size: large;
+    width: 20dvw;
+    margin: 3dvh;
     display: flex;
     justify-content: space-around;
 }
 
 #total{
     width: 90%;
+    height: 10dvh;
     margin-top: auto;
+    padding-top: 3dvh;
     display: flex;
     justify-content: space-around;
     border-top: 1px solid rgba(128, 128, 128, 0.336);
