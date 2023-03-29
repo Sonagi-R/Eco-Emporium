@@ -1,26 +1,72 @@
 require('dotenv').config()
 const app = require('../app.js');
 const supertest = require('supertest-session');
-const app = require('../app.js');
-const supertest = require('supertest-session');
 
 const request = supertest(app);
 
-describe('Item Routes - /items', () => {
+// describe('Item Routes - /items', () => {
+//     it('Should return all shop items', async () => {
+//         const session = ({
+//             secret: process.env.SECRET,
+//             saveUninitialized: false,
+//             resave: true,
+//           })
+//         const res = await request.get('/items');
+
+//         expect(res.statusCode).toBe(200);
+//         expect(Array.isArray(res.body)).toBe(true);
+//     })
+
+// });
+
+
+describe('Auth Routes - /auth', () => {
+    it('Should allow user to register a new account', async () => {
+        const res = await request.post('/auth/register').send({ username: "test", password: "test" });
+
+        expect(res.statusCode).toBe(201);
+    })
+
+    it('Should log user in as admin', async () => {
+        const res = await request.post('/auth/login').send({ username: "admin", password: "admin" });
+
+        expect(res.statusCode).toBe(200);
+        expect(res.body.authenticated).toBe(true);
+    });
+
     it('Should return all shop items', async () => {
-        const session = ({
-            secret: process.env.SECRET,
-            saveUninitialized: false,
-            resave: true,
-          })
         const res = await request.get('/items');
-        console.log(res.body);
 
         expect(res.statusCode).toBe(200);
         expect(Array.isArray(res.body)).toBe(true);
     })
 
-});
+
+    it('Should log user out of the admin account', async () => {
+        const res = await request.get('/auth/logout');
+
+        expect(res.statusCode).toBe(200);
+        expect(res.body.authenticated).toBe(false);
+    });
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
