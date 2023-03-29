@@ -20,7 +20,7 @@
       >
       <div class="user">
         <span id="sign-out-btn">Sign out</span>
-        <span id="username">Username<i class="fa-solid fa-user"></i></span>
+        <a href="profile.html"><span id="username">Username<i class="fa-solid fa-user"></i></span></a>
       </div>
     </header>
 
@@ -30,10 +30,15 @@
           <input id="toggle" type="checkbox" checked />
           <h2>Products</h2>
           <ul>
-            <li><a href="#chapter1">Chapter 01</a></li>
-            <li><a href="#chapter2">Chapter 02</a></li>
-            <li><a href="#chapter3">Chapter 03</a></li>
-            <li><a href="#chapter4">Chapter 04</a></li>
+            <li><button id="all-items">All Items</button></li>
+            <li><button class="categories" id="clothes">Clothes</button></li>
+            <li><button class="categories" id="electronics">Electronics</button></li>
+            <li><button class="categories" id="furniture">Funiture</button></li>
+            <li><button class="categories" id="toys-&-games">Toys & Games</button></li>
+            <li><button class="categories" id="pet-supplies">Pet Supplies</button></li>
+            <li><button class="categories" id="sports-&-recreation">Sports & Recreation</button></li>
+            <li><button class="categories" id="outdour-&-garden">Outdoor & Garden</button></li>
+            <li><button id="other">Other</button></li>
           </ul>
         </nav>
       </div>
@@ -41,22 +46,22 @@
         <div class="category-list">
           <div class="category-title">Products</div>
           <div class="category-options">
-            <button>All Items</button>
-            <button>Clothes</button>
-            <button>Electronics</button>
-            <button>Funiture</button>
-            <button>Toys & Games</button>
-            <button>Pet Supplies</button>
-            <button>Sports & Recreation</button>
-            <button>Outdoor & Garden</button>
-            <button>Other</button>
+            <button id="all-items">All Items</button>
+            <button class="categories" id="clothes">Clothes</button>
+            <button class="categories" id="electronics">Electronics</button>
+            <button class="categories" id="furniture">Funiture</button>
+            <button class="categories" id="toys-&-games">Toys & Games</button>
+            <button class="categories" id="pet-supplies">Pet Supplies</button>
+            <button class="categories" id="sports-&-recreation">Sports & Recreation</button>
+            <button class="categories" id="outdour-&-garden">Outdoor & Garden</button>
+            <button id="other">Other</button>
           </div>
         </div>
       </div>
       <div class="products-panel panel">
         <div class="products-panel-header">
           <div class="product-category-name">Clothes</div>
-          <button>New listing</button>
+          <button id="new-listing-btn">New listing</button>
         </div>
         <div class="product-list" id="product-list">
           <div class="product">
@@ -208,6 +213,53 @@
           <div class="pagination" id="pagination"></div>
         </footer>
       </div>
+    </div>
+    <div class="overlay" id="overlay">
+      <form class="form-container">
+        <div class="form-group">
+          <label for="main-image-input">Item Image:</label>
+          <input type="file" id="main-image-input" name="main-image-input" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="item-name-input">Item Name:</label>
+          <input type="text" id="item-name-input" name="item-name-input" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="item-price-input">Item Price:</label>
+          <input type="number" id="item-price-input" name="item-price-input" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="description-input">Description:</label>
+          <textarea id="description-input" name="description-input" required></textarea>
+        </div>
+      
+        <div class="form-group">
+          <label for="category-input">Category:</label>
+          <select id="category-input" name="category-input" required>
+            <option value="clothes">Clothes</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="toys-games">Toys & Games</option>
+            <option value="pet-supplies">Pet Supplies</option>
+            <option value="sports-recreation">Sports & Recreation</option>
+            <option value="outdoor-garden">Outdoor & Garden</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      
+        <div class="form-group">
+          <label for="additional-images-input">Additional Images:</label>
+          <input type="file" id="additional-images-input" name="additional-images-input" multiple required>
+        </div>
+      
+        <div class="buttons">
+          <input type="submit" value="Submit" class="form-button">
+          <button style="background-color: #c24f3f" class="form-button" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
     </div>
   </body>
 </html>
