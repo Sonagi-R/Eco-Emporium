@@ -145,11 +145,16 @@ header > span {
 }
 
 .product > img {
-  height: 250px;
-  width: 200px;
+  min-height: 250px;
+  min-width: 200px;
   object-fit: cover;
   border-radius: 20px;
   margin-bottom: 10px;
+}
+
+.productImage {
+  height: 250px;
+  width: 200px;
 }
 
 .product:hover {
