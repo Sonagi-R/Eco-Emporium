@@ -82,7 +82,7 @@ VALUES
         'Leather Wallet',
         1,
         5050,
-        'clothes',
+        'Clothes',
         'Keep your cash and cards organized with this stylish leather wallet. It has multiple compartments and a secure zippered closure.',
         'https://revaayat.co.uk/wp-content/uploads/2021/05/GIX043.png',
         'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
