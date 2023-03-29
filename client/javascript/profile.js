@@ -1,11 +1,6 @@
-const username = document.querySelector("#username")
 const newListingBtn = document.querySelector("#new-listing-btn")
 const cancelBtn = document.querySelector("#cancel-btn")
 const overlay = document.querySelector("#overlay")
-
-const user = JSON.parse(localStorage.getItem("user"))
-
-username.innerHTML = user + `<i class="fa-solid fa-user"></i>`
 
 newListingBtn.addEventListener("click", () => {
     overlay.style.display = "block";
@@ -57,8 +52,6 @@ function createListingElement (data) {
 
 async function loadListings () {
 
-    console.log(localStorage.getItem("user_id"))
-
     const response = await fetch(`https://localhost:8080/items/user/${localStorage.getItem("user_id")}`, { credentials: "include" });
     
     if (response.status == 200) {
@@ -71,7 +64,7 @@ async function loadListings () {
             container.appendChild(elem);
         })
     } else {
-        //window.location.assign("profile.html");
+        window.location.assign("profile.html");
     }
 }
 

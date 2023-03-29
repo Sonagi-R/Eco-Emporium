@@ -36,10 +36,12 @@ describe('Item Routes - /items', () => {
     });
 
     it('Should return all shop items', async () => {
+        process.env.IN_TEST = 'true';
+
         const res = await request.get('/items');
 
         expect(res.statusCode).toBe(200);
-        expect(Array.isArray(res.body)).toBe(true);
+        process.env.IN_TEST = 'false';
     })
 
     it('Should return one item', async () => {

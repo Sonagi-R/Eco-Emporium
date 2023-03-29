@@ -2,9 +2,11 @@ const Item = require('../model/itemClass.js')
 
 async function index(req, res) {
     try {
+        console.log('try triggered')
         const items = await Item.showAll();
         res.status(200).json(items);
     } catch (error) {
+        console.log('catch triggered')
         res.status(401).send({error:'Cannot access without logging in'})
     }
 }
@@ -32,11 +34,9 @@ async function getByUserId(req, res) {
 async function create(req, res) {
     const item = req.body
     try {
-        console.log("create triggered")
         const newItem = await Item.create(item)
         res.status(201).json(newItem)
     } catch (error) {
-        console.log("error triggered")
         res.status(500).json({error: 'Error with the item database'})
     }
 }
