@@ -70,7 +70,7 @@ VALUES
         'Leather Wallet',
         1,
         5050,
-        'clothes',
+        'Clothes',
         'Keep your cash and cards organized with this stylish leather wallet. It has multiple compartments and a secure zippered closure.',
         'https://revaayat.co.uk/wp-content/uploads/2021/05/GIX043.png'
     ),
