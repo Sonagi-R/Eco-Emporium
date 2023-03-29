@@ -36,6 +36,11 @@ describe('Item Routes - /items', () => {
     });
 
     it('Should return all shop items', async () => {
+        session = ({
+            secret: process.env.SECRET,
+            saveUninitialized: false,
+            resave: true,
+          })
         const res = await request.get('/items');
 
         expect(res.statusCode).toBe(200);
@@ -51,7 +56,15 @@ describe('Item Routes - /items', () => {
     })
 
     it('Should create one item', async () => {
-        const newItem = {"description": "Test Object", "image_url": "https://google.com", "item_id": 10, "name": "Test", "price": 9}
+        const newItem = {
+            "user_id": 1,
+            "name": "Test",
+            "price": 9,
+            "category": "Clothes",
+            "description": "Test Object", 
+            "image_url": "https://google.com/",
+            "additional_imgs": "https://google.com/"
+          }
         const res = await request.post('/items');
         
 

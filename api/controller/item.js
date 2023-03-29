@@ -24,7 +24,7 @@ async function create(req, res) {
     try {
         console.log("create triggered")
         const newItem = await Item.create(item)
-        res.status(201).send(newItem)
+        res.status(201).json(newItem)
     } catch (error) {
         console.log("error triggered")
         res.status(500).send({error: 'Error with the item database'})
