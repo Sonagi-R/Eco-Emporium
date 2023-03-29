@@ -152,11 +152,6 @@ header > span {
   margin-bottom: 10px;
 }
 
-.productImage {
-  height: 250px;
-  width: 200px;
-}
-
 .product:hover {
   scale: 1.05;
 }

@@ -1,5 +1,3 @@
-const username = document.querySelector("#username")
-
 const newListingBtn = document.querySelector("#new-listing-btn")
 const cancelBtn = document.querySelector("#cancel-btn")
 const overlay = document.querySelector("#overlay")
@@ -13,10 +11,8 @@ const productNames = document.querySelectorAll('.productName')
 const productPrice = document.querySelectorAll('.productPrice')
 const numPages = Math.ceil(products.length / productsPerPage);
 
-const allItems = document.querySelector('#all-items')
+const allItems = document.querySelectorAll('#all-items')
 const categories = document.querySelectorAll('.categories')
-
-const user = JSON.parse(localStorage.getItem("user"))
 
 const paginationContainer = document.getElementById('pagination');
 for (let i = 1; i <= numPages; i++) {
@@ -52,61 +48,79 @@ function showPage(pageNumber) {
   });
 }
 
-username.innerHTML = user + `<i class="fa-solid fa-user"></i>`
 showPage(1);
 
-const pageData = []
+let pageData = []
 
-fetch(`https://localhost:8080/items`, { credentials: "include" })
-    .then((response) => response.json())
-    .then((data) => {
-      for (let i = 0; i < 10; i++) {
-        productImages[i].src = `${data[i].image_url}`
-        productNames[i].textContent = `${data[i].name}`
-        products[i].setAttribute('id', `${data[i].item_id}`)
-        priceString = data[i].price.toString()
-        dotPosition = priceString.length - 2
-        correctPrice = priceString.slice(0, dotPosition) + '.' + priceString.slice(dotPosition)
-        productPrice[i].textContent = `${correctPrice}`
-        pageData.push(data[i])
-      }
-      console.log(data)
-      return data
-    })
-  .catch(err => console.log(err))
+function createProductElement(data) {
 
-for (let i = 0; i < products.length; i++){
-  products[i].addEventListener('click', () => {
-    localStorage.setItem("item_id",products[i].id)
-    window.location = 'http://localhost:2000/item-page.html';
-  })
+  const product = document.createElement("div");
+  product.className = "product";
+  
+  const img = document.createElement("img")
+  img.src = data.image_url
+  img.className = "productImage"
+  product.appendChild(img)
+
+  const productPrice = document.createElement("p")
+  productPrice.className = "productPrice"
+  productPrice.textContent = data.price
+  product.appendChild(productPrice)
+  
+  const productName = document.createElement("p")
+  productName.className = "productName"
+  productName.textContent = data.name
+  product.appendChild(productName)
+
+  return product;
 }
 
-allItems.addEventListener('click', () => {
-  for (let i = 0; i < 10; i++) {
-    productImages[i].src = `${pageData[i].image_url}`
-    productNames[i].textContent = `${pageData[i].name}`
-    products[i].setAttribute('id', `${pageData[i].item_id}`)
-    priceString = pageData[i].price.toString()
-    dotPosition = priceString.length - 2
-    correctPrice = priceString.slice(0, dotPosition) + '.' + priceString.slice(dotPosition)
-    productPrice[i].textContent = `${correctPrice}`
+async function loadListings () {
+
+  const response = await fetch(`https://localhost:8080/items`, { credentials: "include" });
+  
+  if (response.status == 200) {
+      const products = await response.json();
+  
+      const container = document.querySelector("#product-list");
+      container.innerHTML = ""
+
+      products.forEach(p => {
+          const elem = createProductElement(p);
+          container.appendChild(elem);
+          elem.addEventListener("click", () => {
+            localStorage.setItem("item_id", p.item_id)
+            window.location.assign("item-page.html");
+          })
+          pageData.push(p)
+      })
+
+  } else {
+      window.location.assign("main.html");
   }
+}
+
+loadListings()
+
+allItems.forEach((allItem) => {
+  allItem.addEventListener('click', () => {
+    pageData = []
+    loadListings()
+  })
 })
+
 
 categories.forEach((category) => {
   category.addEventListener('click', () => {
     const currentData = pageData.filter(item => (item.category == `${category.textContent}`))
-    for (let i = 0; i < currentData.length; i++) {
-      productImages[i].src = `${currentData[i].image_url}`
-      productNames[i].textContent = `${currentData[i].name}`
-      products[i].setAttribute('id', `${currentData[i].item_id}`)
-      priceString = currentData[i].price.toString()
-      dotPosition = priceString.length - 2
-      correctPrice = priceString.slice(0, dotPosition) + '.' + priceString.slice(dotPosition)
-      productPrice[i].textContent = `${correctPrice}`
-    }
-  } )
+    const container = document.querySelector("#product-list");
+    container.innerHTML = ""
+
+    currentData.forEach(p => {
+      const elem = createProductElement(p);
+      container.appendChild(elem);
+    })
+  })
 })
 
 newListingBtn.addEventListener("click", () => {
