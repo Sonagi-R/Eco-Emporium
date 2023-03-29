@@ -26,11 +26,14 @@ class Item {
 
     static async create(newItem) {
         const { name, category, price, description, image_url, additional_imgs } = newItem
+        console.log(newItem)
+        console.log('im here')
         const response = await db.query('INSERT INTO items (name, category, price, description, image_url, additional_imgs) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;', [name, category, price, description, image_url, additional_imgs])
-
+        console.log(response)
         if (response.rows.length != 1) {
             throw new Error('Could not add item to the database')
         }
+        return new Item(response.rows[0])
     }
 
     async destroy() {
