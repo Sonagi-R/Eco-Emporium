@@ -30,6 +30,7 @@ const logIn = async (data) => {
   if (res.ok) {
     console.log(`Successfully logged in: ${data.username}`);
     localStorage.setItem("user", JSON.stringify(data.username));
+    localStorage.setItem("user_id", JSON.stringify(data.user_id));
     window.location.assign("main.html");
   } else {
     console.log("Something failed, very sad! :(");
