@@ -1,8 +1,7 @@
 const signOutBtn = document.querySelector("#sign-out-btn")
 
 const signOut = async () => {
-
-  const res = await fetch(`https://localhost:8080/auth/logout`);
+  const res = await fetch(`https://localhost:8080/auth/logout`, { credentials: "include" });
 
   if (res.ok) {
     console.log("Successfuly logged out!");
