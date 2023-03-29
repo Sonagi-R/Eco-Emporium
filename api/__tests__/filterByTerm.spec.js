@@ -10,7 +10,7 @@ describe('Auth Routes - /auth', () => {
         const res = await request.post('/auth/register').send({ username: "test", email: "test@gmail.com", password: "test" });
 
         expect(res.statusCode).toBe(201);
-    })
+    });
 
     it('Should log user in as admin', async () => {
         const res = await request.post('/auth/login').send({ username: "admin", password: "admin" });
@@ -21,6 +21,8 @@ describe('Auth Routes - /auth', () => {
 
     it('Should log user out of the admin account', async () => {
         const res = await request.get('/auth/logout');
+
+        console.log(res.body)
 
         expect(res.statusCode).toBe(200);
         expect(res.body.authenticated).toBe(false);
@@ -36,12 +38,10 @@ describe('Item Routes - /items', () => {
     });
 
     it('Should return all shop items', async () => {
-        session = ({
-            secret: process.env.SECRET,
-            saveUninitialized: false,
-            resave: true,
-          })
+        await request.post('/auth/login').send({ username: "admin", password: "admin" });
         const res = await request.get('/items');
+
+        console.log(res.body)
 
         expect(res.statusCode).toBe(200);
         expect(Array.isArray(res.body)).toBe(true);
