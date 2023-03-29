@@ -35,12 +35,21 @@ CREATE TABLE items(
     category VARCHAR(100) NOT NULL,
     description VARCHAR(255),
     image_url VARCHAR(255),
+    additional_imgs VARCHAR(8000),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     PRIMARY KEY (item_id)
 );
 
 INSERT INTO
-    items(name, user_id, price, category, description, image_url)
+    items(
+        name,
+        user_id,
+        price,
+        category,
+        description,
+        image_url,
+        additional_imgs
+    )
 VALUES
     (
         'Laptop Backpack',
@@ -48,7 +57,8 @@ VALUES
         8015,
         'Clothes',
         'This sleek and durable laptop backpack features multiple compartments and a padded sleeve to keep your laptop safe and secure.',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXsKib2hN1Hhm0nk-GLbP4CHna7WSyziaYEA&usqp=CAU'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXsKib2hN1Hhm0nk-GLbP4CHna7WSyziaYEA&usqp=CAU',
+        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     ),
     (
         'Wireless Bluetooth Speaker',
@@ -56,7 +66,8 @@ VALUES
         7000,
         'Electronics',
         'Experience high-quality sound and portability with this wireless Bluetooth speaker. It''s waterproof and has a long battery life.',
-        'https://cdn.shopify.com/s/files/1/0503/4170/7969/products/xdobo2_700x700.jpg?v=1671229502'
+        'https://cdn.shopify.com/s/files/1/0503/4170/7969/products/xdobo2_700x700.jpg?v=1671229502',
+        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     ),
     (
         'Smartphone Gimbal Stabilizer',
@@ -64,15 +75,17 @@ VALUES
         12030,
         'Electronics',
         'Capture professional-grade videos with this smartphone gimbal stabilizer. It''s easy to use and has multiple modes for different shooting scenarios.',
-        'https://www.omnicoreagency.com/wp-content/uploads/2020/01/Zhiyun-Smooth-Q2-3-Axis-Handheld-Smartphone-Gimbal-Stabilizer-Table.jpg'
+        'https://www.omnicoreagency.com/wp-content/uploads/2020/01/Zhiyun-Smooth-Q2-3-Axis-Handheld-Smartphone-Gimbal-Stabilizer-Table.jpg',
+        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     ),
     (
         'Leather Wallet',
         1,
         5050,
-        'clothes',
+        'Clothes',
         'Keep your cash and cards organized with this stylish leather wallet. It has multiple compartments and a secure zippered closure.',
-        'https://revaayat.co.uk/wp-content/uploads/2021/05/GIX043.png'
+        'https://revaayat.co.uk/wp-content/uploads/2021/05/GIX043.png',
+        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     ),
     (
         'Electric Toothbrush',
@@ -80,7 +93,8 @@ VALUES
         9000,
         'Electronics',
         'Achieve a brighter, healthier smile with this electric toothbrush. It has multiple settings and a timer to ensure thorough cleaning.',
-        'https://growingsmiles.co.uk/wp-content/uploads/SURI-cover.png'
+        'https://growingsmiles.co.uk/wp-content/uploads/SURI-cover.png',
+        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     ),
     (
         'Travel Pillow',
@@ -88,7 +102,8 @@ VALUES
         2510,
         'Outdoor & Garden',
         'Get a comfortable and restful sleep while traveling with this travel pillow. It''s lightweight and compact, making it easy to carry.',
-        'https://asset1.cxnmarksandspencer.com/is/image/mands/Memory-Foam-Travel-Pillow-1/PL_05_T40_8413L_T0_X_EC_0?$PDP_IMAGEGRID_1_LG$'
+        'https://asset1.cxnmarksandspencer.com/is/image/mands/Memory-Foam-Travel-Pillow-1/PL_05_T40_8413L_T0_X_EC_0?$PDP_IMAGEGRID_1_LG$',
+        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     ),
     (
         'Vintage Leather Bag',
@@ -96,7 +111,8 @@ VALUES
         12005,
         'Clothes',
         'Handcrafted from high-quality leather, this vintage-style bag features multiple compartments and a sturdy strap for comfortable wear.',
-        'https://i.ebayimg.com/images/g/zcYAAOSw4OFd5jFH/s-l500.jpg'
+        'https://i.ebayimg.com/images/g/zcYAAOSw4OFd5jFH/s-l500.jpg',
+        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     ),
     (
         'Designer Sunglasses',
@@ -104,7 +120,8 @@ VALUES
         18040,
         'Clothes',
         'Make a fashion statement with these stylish sunglasses from a top designer brand. The frames are made from durable materials and the lenses provide 100% UV protection.',
-        'https://www.internetspecs.co.uk/user/products/large/radley-rayanna-designer-sunglasses-107.jpg'
+        'https://www.internetspecs.co.uk/user/products/large/radley-rayanna-designer-sunglasses-107.jpg',
+        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     ),
     (
         'Wireless Headphones',
@@ -112,7 +129,8 @@ VALUES
         10060,
         'Electronics',
         'Experience crystal-clear sound and freedom of movement with these wireless headphones. They have a long battery life and are compatible with a range of devices.',
-        'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MXJ92?wid=2104&hei=2980&fmt=jpeg&qlt=95&.v=1580420175341'
+        'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MXJ92?wid=2104&hei=2980&fmt=jpeg&qlt=95&.v=1580420175341',
+        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     ),
     (
         'Eco-Friendly Water Bottle',
@@ -120,5 +138,6 @@ VALUES
         2570,
         'Sports & Recreation',
         'Reduce your environmental footprint with this eco-friendly water bottle made from recycled materials. It''s durable, leak-proof, and easy to carry.',
-        'https://cdn.shopify.com/s/files/1/0957/0496/products/black-blum-glass-water-bottle-olive-600ml-378961_1000x.jpg?v=1660560895'
+        'https://cdn.shopify.com/s/files/1/0957/0496/products/black-blum-glass-water-bottle-olive-600ml-378961_1000x.jpg?v=1660560895',
+        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     );
