@@ -34,7 +34,7 @@ app.use(
 );
 
 app.use("/auth", users);
-app.use("/items", items);
+app.use("/items", auth, items);
 
 module.exports = app;
 

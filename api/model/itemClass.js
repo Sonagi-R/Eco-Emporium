@@ -1,7 +1,8 @@
 const db = require('../database/connect')
 
 class Item {
-    constructor({ item_id, name, category, description, price, image_url, additional_imgs }) {
+    constructor({ user_id, item_id, name, category, description, price, image_url, additional_imgs }) {
+        this.user_id = user_id;
         this.item_id = item_id;
         this.name = name;
         this.category = category;
