@@ -1,7 +1,8 @@
 const db = require('../database/connect')
 
 class Item {
-    constructor({ name, description, price, image_url }) {
+    constructor({ item_id, name, description, price, image_url }) {
+        this.item_id = item_id;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -23,7 +24,7 @@ class Item {
 
     static async create(newItem) {
         const { name, price, description, image_url } = newItem
-        const response = await db.query('INSERT INTO items (name, price, description, image_url) VALUES ($1, $2, $3, $4) RETURNING *;', [name, price, description, image_url])
+        const response = await db.query('INSERT INTO items (name, price, description, image_url) VALUES ($1, $2, $3, $4, $5) RETURNING *;', [name, price, description, image_url])
 
         if (response.rows.length != 1) {
             throw new Error('Could not add item to the database')
