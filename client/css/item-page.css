@@ -49,6 +49,74 @@ header > span {
   cursor: pointer;
 }
 
+#numOfItems{
+  position: absolute;
+  color: black;
+  width: 1dvh;
+  font-size: large;
+  transform: translateY(-150%) translateX(350%);
+}
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content{
+  position: absolute;
+  display: none;
+  left: 0;
+  width: 20dvw;
+  transform: translateX(-75%);
+  background-color: black;
+  border-radius: 1dvh;
+}
+
+.dropdown-content > div{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.dropdown-content > div > a, p, button{
+  color: white;
+  cursor: pointer;
+}
+.dropdown-content > div > button {
+background-color: rgba(248, 40, 40, 0.822);
+border: none;
+width: 3dvw;
+height: 2dvh;
+}
+
+.dropdown-content > div > button:hover{
+  border: 1px solid white;
+}
+
+.dropdown-content > div p:hover{
+  color: #13aa52;
+}
+
+.dropdown-content > div > a:hover{
+  color: #13aa52;
+}
+
+
+.dropdown-content > button {
+  position: absolute;
+  transform: translateY(120%);
+  background-color: #13aa52;
+  color: white;
+  border: none;
+  bottom: 0;
+  left: 25%;
+  height: 5dvh;
+  width: 10dvw;
+}
+.dropdown-content > button:hover {
+  border: 1px solid black;
+}
 .topnav * {
   display: inline;
 }
@@ -311,4 +379,8 @@ header > span {
     display: block;
     text-align: left;
   }
+}
+
+.block{
+  display: block;
 }
