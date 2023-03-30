@@ -92,7 +92,7 @@ const ammendUser = async (data) => {
     }
 
     console.log(options.body)
-  
+  console.log(localStorage.user_id)
     const res = await fetch(`https://localhost:8080/auth/user/${localStorage.user_id}`, options);
   
     console.log(await res.json())

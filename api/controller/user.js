@@ -83,4 +83,19 @@ async function getUser(req, res) {
   }
 }
 
-module.exports = { check, register, login, logout, user, getUser };
+async function update(req, res) {
+  console.log('request recieved')
+  const idx = parseInt(req.params.id)
+  const updateUser = req.body
+  console.log(updateUser)
+  try {
+    const user = await User.getOneById(idx)
+    const result = await user.update(updateUser)
+    res.status(200).send(result)
+} catch (error) {
+    res.status(500).send({error: "Error with the item database"})
+}
+}
+
+
+module.exports = { check, register, login, logout, user, getUser, update };

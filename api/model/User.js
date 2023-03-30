@@ -32,6 +32,17 @@ class User {
     const newUser = await User.getOneById(newId);
     return newUser;
   }
+
+  async update(updateUser) {
+    const keyArray = ['username', 'password']
+    for (let i = 0; i < keyArray.length; i++){
+        if (!updateUser[`${keyArray[i]}`]) {
+            updateUser[`${keyArray[i]}`] = this[`${keyArray[i]}`]
+        }
+    }
+    const response = await db.query('UPDATE items SET username=$1, password=$2 WHERE  username =$3 returning *', [updateUser.username, updateUser.password , this.name])
+    return new Item(response.rows[0])
+}
 }
 
 module.exports = User;
