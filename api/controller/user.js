@@ -70,4 +70,17 @@ async function user(req, res) {
   }
 }
 
-module.exports = { check, register, login, logout, user };
+async function getUser(req, res) {
+  const idx= req.params.id
+
+  try {
+    const user = await User.getOneById(idx)
+    return res.status(200).json(user);
+  } catch (e) {
+    return res
+      .status(400)
+      .json({ message: e });
+  }
+}
+
+module.exports = { check, register, login, logout, user, getUser };

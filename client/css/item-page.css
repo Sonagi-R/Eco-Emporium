@@ -66,24 +66,21 @@ header > span {
   position: absolute;
   display: none;
   left: 0;
-  width: 20dvw;
-  transform: translateX(-75%);
+  width: 30dvw;
+  transform: translateX(-85%);
   background-color: black;
   border-radius: 1dvh;
+  padding: 15px;
+  z-index: 999;
 }
 
 .dropdown-content > div{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-
-.dropdown-content > div > a, p, button{
-  color: white;
-  cursor: pointer;
-}
-.dropdown-content > div > button {
+.dropdown-content > div > .inner-div > button {
 background-color: rgba(248, 40, 40, 0.822);
 border: none;
 width: 3dvw;
@@ -119,6 +116,14 @@ height: 2dvh;
 }
 .topnav * {
   display: inline;
+}
+
+.inner-div {
+  width: 60px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  align-items: center;
 }
 
 .topnav li {
@@ -165,9 +170,10 @@ height: 2dvh;
 #current-image {
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
-.overlay {
+.btn-overlay {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -181,18 +187,27 @@ height: 2dvh;
   border: none;
 }
 
+.change-img-btn {
+  cursor: pointer;
+}
+
 #previous {
-  display: none;
   position: absolute;
-  top: 50%;
-  margin-left: 10px;
+  width: 30px; 
+  height: 50%;
+  top: 25%;
+  background: #020703;
+  color: white;
 }
 
 #next {
   position: absolute;
-  top: 50%;
   right: 0;
-  margin-right: 10px;
+  width: 30px;
+  height: 50%;
+  top: 25%;
+  background: #020703;
+  color: white;
 }
 
 .item-details {
@@ -210,7 +225,6 @@ height: 2dvh;
   margin-bottom: 10px;
   display: flex;
   float: right;
-  text-align: center;
   font-size: 30px;
 }
 
