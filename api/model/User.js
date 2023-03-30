@@ -1,10 +1,11 @@
 const db = require('../database/connect')
 
 class User {
-  constructor({ user_id, username, password, is_admin}) {
+  constructor({ user_id, username, password, email, is_admin}) {
     this.user_id = user_id;
     this.username = username;
     this.password = password;
+    this.email = email;
     this.is_admin = is_admin;
   }
 
@@ -34,13 +35,13 @@ class User {
   }
 
   async update(updateUser) {
-    const keyArray = ['username', 'password']
+    const keyArray = ['username', 'password', 'email']
     for (let i = 0; i < keyArray.length; i++){
         if (!updateUser[`${keyArray[i]}`]) {
             updateUser[`${keyArray[i]}`] = this[`${keyArray[i]}`]
         }
     }
-    const response = await db.query('UPDATE items SET username=$1, password=$2 WHERE  username =$3 returning *', [updateUser.username, updateUser.password , this.name])
+    const response = await db.query('UPDATE users SET username=$1, password=$2, email=$3 WHERE  username =$4 returning *', [updateUser.username, updateUser.password, updateUser.email, this.username])
     return new Item(response.rows[0])
 }
 }

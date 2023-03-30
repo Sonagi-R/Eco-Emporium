@@ -84,12 +84,11 @@ async function getUser(req, res) {
 }
 
 async function update(req, res) {
-  console.log('request recieved')
   const idx = parseInt(req.params.id)
   const updateUser = req.body
-  console.log(updateUser)
   try {
     const user = await User.getOneById(idx)
+    console.log(user)
     const result = await user.update(updateUser)
     res.status(200).send(result)
 } catch (error) {

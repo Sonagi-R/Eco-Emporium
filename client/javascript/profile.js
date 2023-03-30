@@ -3,11 +3,10 @@ const cancelBtn = document.querySelector("#cancel-btn")
 const overlay = document.querySelector("#overlay")
 const userUpdateBtn = document.querySelector('#update-submit')
 const inputs = document.querySelectorAll('.update-input')
+const updateButtons = []
 
-userUpdateBtn.addEventListener('click', (e) => {
-    console.log('click')
-    e.preventDefault()
-    ammendUser(getFormData())
+userUpdateBtn.addEventListener('click', () => {
+    amendUser(getFormData())
 })
 
 newListingBtn.addEventListener("click", () => {
@@ -53,6 +52,11 @@ function createListingElement (data) {
     button.textContent = "Delete listing"
     listingInfo.appendChild(button)
 
+    const updateButton = document.createElement("button")
+    updateButton.textContent = "Update listing"
+    updateButton.setAttribute('class', 'update-button')
+    listingInfo.appendChild(updateButton)
+
     listing.appendChild(listingInfo)
 
     return listing;
@@ -69,6 +73,8 @@ async function loadListings () {
 
         listings.forEach(p => {
             const elem = createListingElement(p);
+            updateButtons.push(elem)
+            elem.setAttribute('id', p.item_id)
             container.appendChild(elem);
         })
     } else {
@@ -76,16 +82,16 @@ async function loadListings () {
     }
 }
 
-loadListings()
+ loadListings()
+
 
 function getFormData() {
     const userFormData = {};
     inputs.forEach((input) => (userFormData[input.name] = input.value));
-    userFormData["user_id"] = localStorage.getItem('user_id')
     return userFormData;
   }
 
-const ammendUser = async (data) => {
+const amendUser = async (data) => {
     const options = {
         method: "PATCH",
         credentials: "include",
