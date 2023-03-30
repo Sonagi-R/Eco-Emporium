@@ -11,6 +11,7 @@
     <script defer src="./javascript/checkUser.js"></script>
     <script defer src="./javascript/setUser.js"></script>
     <script defer src="./javascript/main.js"></script>
+    <script defer src="./javascript/new-listing.js"></script>
     <script defer src="./javascript/logout.js"></script>
     <title>Eco Emporium</title>
   </head>
@@ -76,27 +77,27 @@
       <form class="form-container">
         <div class="form-group">
           <label for="main-image-input">Item Image:</label>
-          <input type="file" id="main-image-input" name="main-image-input" required>
+          <input class="listing-input" type="file" id="main-image-input" name="image_url" required>
         </div>
       
         <div class="form-group">
           <label for="item-name-input">Item Name:</label>
-          <input type="text" id="item-name-input" name="item-name-input" required>
+          <input class="listing-input"type="text" id="item-name-input" name="name" required>
         </div>
       
         <div class="form-group">
           <label for="item-price-input">Item Price:</label>
-          <input type="number" id="item-price-input" name="item-price-input" required>
+          <input class="listing-input" type="number" id="item-price-input" name="price" required>
         </div>
       
         <div class="form-group">
           <label for="description-input">Description:</label>
-          <textarea id="description-input" name="description-input" required></textarea>
+          <textarea class="listing-text-area" id="description-input" name="description" required></textarea>
         </div>
       
         <div class="form-group">
           <label for="category-input">Category:</label>
-          <select id="category-input" name="category-input" required>
+          <select class="listing-select" id="category-input" name="category" required>
             <option value="clothes">Clothes</option>
             <option value="electronics">Electronics</option>
             <option value="furniture">Furniture</option>
@@ -110,7 +111,7 @@
       
         <div class="form-group">
           <label for="additional-images-input">Additional Images:</label>
-          <input type="file" id="additional-images-input" name="additional-images-input" multiple required>
+          <input class="listing-input" type="file" id="additional-images-input" name="additional_imgs" multiple required>
         </div>
       
         <div class="buttons">
