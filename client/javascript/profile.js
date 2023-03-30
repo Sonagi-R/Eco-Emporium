@@ -1,6 +1,12 @@
 const newListingBtn = document.querySelector("#new-listing-btn")
 const cancelBtn = document.querySelector("#cancel-btn")
 const overlay = document.querySelector("#overlay")
+const userUpdateBtn = document.querySelector('#update-submit')
+const inputs = document.querySelectorAll('.update-input')
+
+userUpdateBtn.addEventListener('click',()=> {
+    addListing(getFormData())
+})
 
 newListingBtn.addEventListener("click", () => {
     overlay.style.display = "block";
@@ -69,3 +75,32 @@ async function loadListings () {
 }
 
 loadListings()
+
+function getFormData() {
+    const userFormData = {};
+    inputs.forEach((input) => (formData[input.name] = input.value));
+    formData["user_id"] = localStorage.getItem('user_id')
+    return userFormData;
+  }
+
+const ammendUser = async (data) => {
+    const options = {
+        method: "PATCH",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    }
+
+    console.log(options.body)
+  console.log(localStorage.user_id)
+    const res = await fetch(`https://localhost:8080/auth/user/${localStorage.user_id}`, options);
+  
+    console.log(await res.json())
+
+    if (res.ok) {
+        console.log('updated user')
+    //   window.location.assign("main.html");
+    } else {
+      console.log("Something failed, very sad! :(");
+    }
+}

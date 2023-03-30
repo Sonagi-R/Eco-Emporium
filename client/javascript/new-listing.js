@@ -16,10 +16,12 @@ submit.addEventListener('submit', async (e) => {
 
 function getFormData() {
     const formData = {};
+    const imgs = document.querySelectorAll(".listing-img");
     const inputs = document.querySelectorAll(".listing-input");
     const textarea = document.querySelector(".listing-text-area");
     const select = document.querySelector(".listing-select");
     inputs.forEach((input) => (formData[input.name] = input.value));
+    imgs.forEach((img) => (formData[img.name] = img.files[0]));
     formData["user_id"] = localStorage.getItem('user_id')
     formData[textarea.name] = textarea.value
     formData[select .name] = select.value
@@ -31,19 +33,15 @@ const addListing = async (data) => {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-        user_id: localStorage.getItem('user_id'),
-        name: item_name,
-        price: item_price,
-        category: item_category,
-        description: item_description,
-        image_url: item_image_url,
-        additional_imgs: item_add_imgs
-        })
+    body: JSON.stringify(data)
     };
+
+    console.log(options.body)
   
     const res = await fetch(`https://localhost:8080/items`, options);
   
+    console.log(await res.json())
+
     if (res.ok) {
         console.log('created')
     //   window.location.assign("main.html");

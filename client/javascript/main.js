@@ -1,6 +1,7 @@
 const newListingBtn = document.querySelector("#new-listing-btn")
 const cancelBtn = document.querySelector("#cancel-btn")
 const overlay = document.querySelector("#overlay")
+const categoryName = document.querySelector(".product-category-name")
 
 const productsPerPage = 14;
 const productList = document.getElementById('product-list');
@@ -106,7 +107,6 @@ async function loadListings () {
       }
 
       showPage([...allProducts], 1);
-
   } else {
       window.location.assign("main.html");
   }
@@ -116,6 +116,7 @@ loadListings()
 
 allItems.forEach((allItem) => {
   allItem.addEventListener('click', () => {
+    categoryName.textContent = "All Items"
     pageData = []
     loadListings()
   })
@@ -126,6 +127,8 @@ categories.forEach((category) => {
     const currentData = pageData.filter(item => (item.category == `${category.textContent}`))
     const container = document.querySelector("#product-list");
     container.innerHTML = ""
+
+    categoryName.textContent = category.textContent
 
     currentData.forEach(p => {
       const elem = createProductElement(p);
