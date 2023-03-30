@@ -4,8 +4,10 @@ const overlay = document.querySelector("#overlay")
 const userUpdateBtn = document.querySelector('#update-submit')
 const inputs = document.querySelectorAll('.update-input')
 
-userUpdateBtn.addEventListener('click',()=> {
-    addListing(getFormData())
+userUpdateBtn.addEventListener('click', (e) => {
+    console.log('click')
+    e.preventDefault()
+    ammendUser(getFormData())
 })
 
 newListingBtn.addEventListener("click", () => {
@@ -78,8 +80,8 @@ loadListings()
 
 function getFormData() {
     const userFormData = {};
-    inputs.forEach((input) => (formData[input.name] = input.value));
-    formData["user_id"] = localStorage.getItem('user_id')
+    inputs.forEach((input) => (userFormData[input.name] = input.value));
+    userFormData["user_id"] = localStorage.getItem('user_id')
     return userFormData;
   }
 

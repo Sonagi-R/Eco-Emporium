@@ -10,21 +10,28 @@ const submit = document.querySelector('.form-container')
 submit.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = getFormData();
-    console.log(data)
     await addListing(data);
 })
 
 function getFormData() {
     const formData = {};
-    const imgs = document.querySelectorAll(".listing-img");
+    const img = document.querySelector(".listing-img");
+    const addImg = document.querySelectorAll(".listing-add-img");
     const inputs = document.querySelectorAll(".listing-input");
     const textarea = document.querySelector(".listing-text-area");
     const select = document.querySelector(".listing-select");
     inputs.forEach((input) => (formData[input.name] = input.value));
-    imgs.forEach((img) => (formData[img.name] = img.files[0]));
+    formData["additional_imgs"] = ""
+    addImg.forEach((img, index) => {
+      formData[img.name] += img.value
+      if (index !== addImg.length - 1) {
+        formData[img.name] += ', ';
+      }
+    });
     formData["user_id"] = localStorage.getItem('user_id')
+    formData[img.name] = img.value
     formData[textarea.name] = textarea.value
-    formData[select .name] = select.value
+    formData[select .name] = select.textContent
     return formData;
   }
 
@@ -35,16 +42,12 @@ const addListing = async (data) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
     };
-
-    console.log(options.body)
   
     const res = await fetch(`https://localhost:8080/items`, options);
-  
-    console.log(await res.json())
 
     if (res.ok) {
         console.log('created')
-    //   window.location.assign("main.html");
+      window.location.assign("main.html");
     } else {
       console.log("Something failed, very sad! :(");
     }
