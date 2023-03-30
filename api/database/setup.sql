@@ -34,7 +34,7 @@ CREATE TABLE items(
     price INT NOT NULL,
     category VARCHAR(100) NOT NULL,
     description VARCHAR(500),
-    image_url VARCHAR(255),
+    image_url VARCHAR(8000),
     additional_imgs VARCHAR(8000),
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     PRIMARY KEY (item_id)
