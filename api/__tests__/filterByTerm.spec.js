@@ -62,7 +62,7 @@ describe('Item Routes - /items', () => {
 
     it('Should create one item', async () => {
         process.env.IN_TEST = 'true';
-        const newItem = {
+        const newItem = [{
             "user_id": 1,
             "name": "Test",
             "price": 9,
@@ -70,12 +70,28 @@ describe('Item Routes - /items', () => {
             "description": "Test Object", 
             "image_url": "https://google.com/",
             "additional_imgs": "https://google.com/"
-          }
-        const res = await request.post('/items');
+          }]
+        const res = await request.post('/items').send(newItem);
         
         console.log(res.body)
         expect(res.statusCode).toBe(201);
         expect(res.body).toStrictEqual(newItem);
+        process.env.IN_TEST = 'false';
+    })
+
+    it('Should not be able to create an item with missing values', async () => {
+        process.env.IN_TEST = 'true';
+        const newItem = {
+            "user_id": 1,
+            "name": "Test",
+            "price": 9
+          }
+        const res = await request.post('/items').send(newItem);
+        const err = {error: "Error with the item database"}
+        
+        console.log(res.body)
+        expect(res.statusCode).toBe(500);
+        expect(res.body).toStrictEqual(err);
         process.env.IN_TEST = 'false';
     })
 
@@ -106,11 +122,19 @@ describe('Item Routes - /items', () => {
 
     it('Should show items by user', async () => {
         process.env.IN_TEST = 'true';
-        const res = await request.get('');
+        const res = await request.get('/items/user/1');
 
         expect(res.statusCode).toBe(200);
-        expect(res.body.authenticated).toBe(false);
         process.env.IN_TEST = 'false';
+    });
+
+    it('Should show fail to show items by nonexistent user', async () => {
+        process.env.IN_TEST = 'true';
+        const res = await request.get('/items/user/10');
+        const err = {error:"item not found"}
+
+        expect(res.statusCode).toBe(404);
+        expect(res.body).toBe(err);
     });
 
 
