@@ -87,8 +87,8 @@ async function update(req, res) {
   const idx = parseInt(req.params.id)
   const updateUser = req.body
   try {
+    console.log(updateUser)
     const user = await User.getOneById(idx)
-    console.log(user)
     const result = await user.update(updateUser)
     res.status(200).send(result)
 } catch (error) {

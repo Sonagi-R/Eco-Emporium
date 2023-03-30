@@ -3,10 +3,11 @@ const cancelBtn = document.querySelector("#cancel-btn")
 const overlay = document.querySelector("#overlay")
 const userUpdateBtn = document.querySelector('#update-submit')
 const inputs = document.querySelectorAll('.update-input')
-const updateButtons = []
 
 userUpdateBtn.addEventListener('click', () => {
-    amendUser(getFormData())
+    console.log('clicked')
+    amendUser(getUserFormData())
+    console.log('request done')
 })
 
 newListingBtn.addEventListener("click", () => {
@@ -52,11 +53,6 @@ function createListingElement (data) {
     button.textContent = "Delete listing"
     listingInfo.appendChild(button)
 
-    const updateButton = document.createElement("button")
-    updateButton.textContent = "Update listing"
-    updateButton.setAttribute('class', 'update-button')
-    listingInfo.appendChild(updateButton)
-
     listing.appendChild(listingInfo)
 
     return listing;
@@ -73,8 +69,6 @@ async function loadListings () {
 
         listings.forEach(p => {
             const elem = createListingElement(p);
-            updateButtons.push(elem)
-            elem.setAttribute('id', p.item_id)
             container.appendChild(elem);
         })
     } else {
@@ -85,7 +79,7 @@ async function loadListings () {
  loadListings()
 
 
-function getFormData() {
+function getUserFormData() {
     const userFormData = {};
     inputs.forEach((input) => (userFormData[input.name] = input.value));
     return userFormData;
