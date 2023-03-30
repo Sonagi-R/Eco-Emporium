@@ -5,28 +5,16 @@ const overlay = document.querySelector("#overlay")
 const productsPerPage = 14;
 const productList = document.getElementById('product-list');
 
-const products = productList.querySelectorAll('.product');
 const productImages = document.querySelectorAll('.productImage')
 const productNames = document.querySelectorAll('.productName')
 const productPrice = document.querySelectorAll('.productPrice')
-const numPages = Math.ceil(products.length / productsPerPage);
 
 const allItems = document.querySelectorAll('#all-items')
 const categories = document.querySelectorAll('.categories')
 
 const paginationContainer = document.getElementById('pagination');
-for (let i = 1; i <= numPages; i++) {
-  const link = document.createElement('a');
-  link.href = '#';
-  link.innerText = i;
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    showPage(i);
-  });
-  paginationContainer.appendChild(link);
-}
 
-function showPage(pageNumber) {
+function showPage(products, pageNumber) {
   const startIndex = (pageNumber - 1) * productsPerPage;
   const endIndex = Math.min(startIndex + productsPerPage, products.length);
 
@@ -47,8 +35,6 @@ function showPage(pageNumber) {
     }
   });
 }
-
-showPage(1);
 
 let pageData = []
 
@@ -102,6 +88,25 @@ async function loadListings () {
           pageData.push(p)
       })
 
+      paginationContainer.innerHTML = ""
+
+      const numPages = Math.ceil(products.length / productsPerPage);
+      
+      const allProducts = productList.querySelectorAll('.product');
+
+      for (let i = 1; i <= numPages; i++) {
+        const link = document.createElement('a');
+        link.href = '#';
+        link.innerText = i;
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          showPage([...allProducts], i);
+        });
+        paginationContainer.appendChild(link);
+      }
+
+      showPage([...allProducts], 1);
+
   } else {
       window.location.assign("main.html");
   }
@@ -115,7 +120,6 @@ allItems.forEach((allItem) => {
     loadListings()
   })
 })
-
 
 categories.forEach((category) => {
   category.addEventListener('click', () => {

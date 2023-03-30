@@ -57,6 +57,10 @@ header > span {
   transform: translateY(-150%) translateX(350%);
 }
 
+.carousel-image {
+  min-height: 186px;
+}
+
 .dropdown{
   position: relative;
   display: inline-block;
