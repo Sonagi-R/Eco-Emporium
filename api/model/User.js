@@ -32,6 +32,17 @@ class User {
     const newUser = await User.getOneById(newId);
     return newUser;
   }
+
+  async update(data) {
+    
+    let updatedUser = await db.query("UPDATE users SET  = $1 WHERE snack_id = $2 RETURNING snack_id, votes;",
+        [ this.votes + data.votes, this.id ]);
+    if (updatedSnack.rows.length != 1) {
+        throw new Error("Unable to update votes.")
+    }
+    return new Snack(updatedSnack.rows[0]);
+  }
 }
+
 
 module.exports = User;
