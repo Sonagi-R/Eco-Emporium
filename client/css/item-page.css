@@ -57,6 +57,10 @@ header > span {
   transform: translateY(-150%) translateX(350%);
 }
 
+.carousel-image {
+  min-height: 186px;
+}
+
 .dropdown{
   position: relative;
   display: inline-block;
@@ -68,10 +72,12 @@ header > span {
   left: 0;
   width: 30dvw;
   transform: translateX(-85%);
-  background-color: black;
+  background-color: #fafafa;
   border-radius: 1dvh;
+  border: black solid 1px;
   padding: 15px;
   z-index: 999;
+  cursor: default;
 }
 
 .dropdown-content > div{
@@ -81,10 +87,10 @@ header > span {
 }
 
 .dropdown-content > div > .inner-div > button {
-background-color: rgba(248, 40, 40, 0.822);
-border: none;
-width: 3dvw;
-height: 2dvh;
+  cursor: pointer;
+  border: none;
+  width: 3dvw;
+  height: 2dvh;
 }
 
 .dropdown-content > div > button:hover{
@@ -101,19 +107,16 @@ height: 2dvh;
 
 
 .dropdown-content > button {
-  position: absolute;
-  transform: translateY(120%);
+  position: relative;
   background-color: #13aa52;
   color: white;
   border: none;
   bottom: 0;
-  left: 25%;
   height: 5dvh;
   width: 10dvw;
+  cursor: pointer;
 }
-.dropdown-content > button:hover {
-  border: 1px solid black;
-}
+
 .topnav * {
   display: inline;
 }

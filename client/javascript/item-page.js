@@ -156,8 +156,7 @@ function myFunction() {
 function addDotToPrice(priceTally) {
   priceString = priceTally.toString();
   dotPosition = priceString.length - 2;
-  correctPrice =
-    priceString.slice(0, dotPosition) + "." + priceString.slice(dotPosition);
+  correctPrice = priceString.slice(0, dotPosition) + "." + priceString.slice(dotPosition);
   return `£${correctPrice}`;
 }
 
@@ -186,5 +185,5 @@ async function createCheckoutItem(item) {
   innerDiv.appendChild(p);
   innerDiv.appendChild(button);
   div.appendChild(innerDiv)
-  dropDownContent.appendChild(div);
+  dropDownContent.prepend(div);
 }
