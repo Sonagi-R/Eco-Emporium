@@ -12,6 +12,7 @@ const numOfItems = document.querySelector("#numOfItems");
 const checkoutButton = document.querySelector("#checkoutButton");
 const dropDownContent = document.querySelector(".dropdown-content");
 const goToCheckout = document.querySelector("#goToCheckout");
+const deleteButtons = document.querySelector('.deleteButton')
 
 const allSrc = [];
 let checkOutIncrementer = 0;
@@ -130,10 +131,12 @@ previousButton.addEventListener('click', showPreviousImage);
 nextButton.addEventListener('click', showNextImage);
 
 addToCart.addEventListener("click", () => {
-  checkout.push(items[0]);
+  if (!checkout.find(item => item == items[0])) {
+    checkout.push(items[0]);
   localStorage.setItem("checkout", JSON.stringify(checkout));
   updateCheckoutNum();
   createCheckoutItem(items[0]);
+  }
 });
 
 checkoutButton.addEventListener("click", () => {
@@ -175,15 +178,38 @@ async function createCheckoutItem(item) {
   const a = document.createElement("a");
   const p = document.createElement("p");
   const button = document.createElement("button");
+  button.setAttribute('class', 'deleteButton');
+  button.setAttribute('id', `button${item.item_id}`);
+  button.addEventListener('click', () => {
+    deleteCheckoutItem(button)
+    updateCheckoutNum();
+  })
   const div = document.createElement("div");
+  div.setAttribute('id', `div${item.item_id}`);
   const innerDiv = document.createElement("div");
   a.textContent = item.name;
   p.textContent = addDotToPrice(item.price);
   button.textContent = "Delete";
-  innerDiv.className = "inner-div"
+  innerDiv.className = "inner-div";
   div.appendChild(a);
   innerDiv.appendChild(p);
   innerDiv.appendChild(button);
   div.appendChild(innerDiv)
   dropDownContent.prepend(div);
+}
+
+function deleteCheckoutItem(button) {
+  const buttonIdArray = button.id.split("");
+  buttonIdArray.splice(0, 6)
+  console.log(buttonIdArray)
+  numOfId = buttonIdArray.join("")
+  const currentDiv = document.querySelector(`#div${numOfId}`);
+  console.log(currentDiv);
+  currentDiv.innerHTML = "";
+  const storage = JSON.parse(localStorage.checkout);
+  const itemIndex = storage.findIndex((item) => item.item_id == numOfId);
+  storage.splice(itemIndex, 1);
+  localStorage.setItem("checkout", JSON.stringify(storage))
+  checkoutIndex = checkout.findIndex(item => item == items[0])
+  checkout.splice(checkoutIndex, 1)
 }
