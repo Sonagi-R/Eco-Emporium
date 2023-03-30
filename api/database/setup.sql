@@ -133,6 +133,15 @@ VALUES
         'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     ),
     (
+        'EVGA GTX 980 TI Reference Card - 6GB GDDR5',
+        1,
+        11999,
+        'Electronics',
+        'EVGA GTX 980 TI Reference Card - 6GB GDDR5. Card works great, I have applied new arctic mx-4 to the gpu so it runs cooler.',
+        'https://i.ebayimg.com/images/g/t9kAAOSwZ-lkGb8w/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/0JYAAOSwyk9kGb7F/s-l500.jpg, https://i.ebayimg.com/images/g/pScAAOSwRvdkGb7G/s-l500.jpg, https://i.ebayimg.com/images/g/-R8AAOSwSTpkGb7H/s-l500.jpg'
+    ),
+    (
         'Eco-Friendly Water Bottle',
         1,
         2570,
