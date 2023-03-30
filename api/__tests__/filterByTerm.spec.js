@@ -31,7 +31,6 @@ describe('Auth Routes - /auth', () => {
         process.env.IN_TEST = 'true';
         const res = await request.get('/auth/logout');
 
-        console.log(res.body)
 
         expect(res.statusCode).toBe(200);
         expect(res.body.authenticated).toBe(false);
@@ -53,7 +52,16 @@ describe('Item Routes - /items', () => {
     it('Should return one item', async () => {
         process.env.IN_TEST = 'true';
         const res = await request.get('/items/2');
-        const item2 = {"additional_imgs": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ", "category": "Electronics","description": "Experience high-quality sound and portability with this wireless Bluetooth speaker. It's waterproof and has a long battery life.", "image_url": "https://cdn.shopify.com/s/files/1/0503/4170/7969/products/xdobo2_700x700.jpg?v=1671229502", "item_id": 2, "name": "Wireless Bluetooth Speaker", "price": 7000, "user_id": 1}
+        const item2 = {
+            user_id: 1,
+            item_id: 2,
+            name: 'Wireless Bluetooth Speaker',
+            category: 'Electronics',
+            description: "Experience high-quality sound and portability with this wireless Bluetooth speaker. It's waterproof and has a long battery life.",
+            price: 7000,
+            image_url: 'https://cdn.shopify.com/s/files/1/0503/4170/7969/products/xdobo2_700x700.jpg?v=1671229502',
+            additional_imgs: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
+          }
 
         expect(res.statusCode).toBe(200);
         expect(res.body).toStrictEqual(item2);
@@ -63,19 +71,35 @@ describe('Item Routes - /items', () => {
     it('Should create one item', async () => {
         process.env.IN_TEST = 'true';
         const newItem = {
-            "user_id": 1,
-            "name": "Test",
-            "price": 9,
-            "category": "Clothes",
-            "description": "Test Object", 
-            "image_url": "https://google.com/",
-            "additional_imgs": "https://google.com/"
+            user_id: 1,
+            name: 'Test',
+            category: 'Electronics',
+            description: "Test",
+            price: 70,
+            image_url: 'https://cdn.shopify.com',
+            additional_imgs: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
           }
-        const res = await request.post('/items');
+        const res = await request.post('/items').send(newItem);
         
         console.log(res.body)
         expect(res.statusCode).toBe(201);
-        expect(res.body).toStrictEqual(newItem);
+        expect(Array.isArray(res.body)).toBeTruthy();
+        process.env.IN_TEST = 'false';
+    })
+
+    it('Should not be able to create an item with missing values', async () => {
+        process.env.IN_TEST = 'true';
+        const newItem = {
+            "user_id": 1,
+            "name": "Test",
+            "price": 9
+          }
+        const res = await request.post('/items').send(newItem);
+        const err = {error: "Error with the item database"}
+        
+        console.log(res.body)
+        expect(res.statusCode).toBe(500);
+        expect(res.body).toStrictEqual(err);
         process.env.IN_TEST = 'false';
     })
 
@@ -106,11 +130,19 @@ describe('Item Routes - /items', () => {
 
     it('Should show items by user', async () => {
         process.env.IN_TEST = 'true';
-        const res = await request.get('');
+        const res = await request.get('/items/user/1');
 
         expect(res.statusCode).toBe(200);
-        expect(res.body.authenticated).toBe(false);
         process.env.IN_TEST = 'false';
+    });
+
+    it('Should show fail to show items by nonexistent user', async () => {
+        process.env.IN_TEST = 'true';
+        const res = await request.get('/items/user/10');
+        const err = {error:"item not found"}
+
+        expect(res.statusCode).toBe(404);
+        expect(res.body).toBe(err);
     });
 
 
