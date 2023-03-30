@@ -52,7 +52,7 @@ header > span {
 #numOfItems{
   position: absolute;
   color: black;
-  width: 1dvh;
+  width: 10px;
   font-size: large;
   transform: translateY(-150%) translateX(350%);
 }

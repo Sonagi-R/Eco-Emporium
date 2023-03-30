@@ -169,7 +169,7 @@ VALUES
         'https://i.ebayimg.com/images/g/mDUAAOSwVWhkFKYA/s-l300.jpg, https://i.ebayimg.com/images/g/-hkAAOSwxN5kFKWA/s-l300.jpg, https://i.ebayimg.com/images/g/MMoAAOSwTh9kFKXj/s-l300.jpg'
     ),
     (
-        'FULLY SERVICED "DANSETTE VIVA" VINTAGE RECORD PLAYER - FULLY WORKING',
+        '"DANSETTE VIVA" VINTAGE RECORD PLAYER',
         1,
         15000,
         'Electronics',

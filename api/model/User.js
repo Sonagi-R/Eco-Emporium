@@ -33,15 +33,16 @@ class User {
     return newUser;
   }
 
-  async update(data) {
-    
-    let updatedUser = await db.query("UPDATE users SET  = $1 WHERE snack_id = $2 RETURNING snack_id, votes;",
-        [ this.votes + data.votes, this.id ]);
-    if (updatedSnack.rows.length != 1) {
-        throw new Error("Unable to update votes.")
+  async update(updateUser) {
+    const keyArray = ['username', 'password']
+    for (let i = 0; i < keyArray.length; i++){
+        if (!updateUser[`${keyArray[i]}`]) {
+            updateUser[`${keyArray[i]}`] = this[`${keyArray[i]}`]
+        }
     }
-    return new Snack(updatedSnack.rows[0]);
-  }
+    const response = await db.query('UPDATE items SET username=$1, password=$2 WHERE  username =$3 returning *', [updateUser.username, updateUser.password , this.name])
+    return new Item(response.rows[0])
+}
 }
 
 
