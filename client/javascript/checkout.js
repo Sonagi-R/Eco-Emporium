@@ -1,4 +1,4 @@
-const article = document.querySelector('#checkoutList')
+const checkoutList = document.querySelector('#checkoutList')
 const totalPrice = document.querySelector('#totalPrice')
 const complete = document.querySelector('#complete')
 complete.addEventListener('click', () => {
@@ -18,7 +18,7 @@ for (let i = 0; i < checkoutData.length; i++){
     item.appendChild(itemName)
     item.appendChild(itemPrice)
     item.classList.add('item')
-    article.appendChild(item)
+    checkoutList.appendChild(item)
 }
 
 function addDotToPrice(priceTally) {
