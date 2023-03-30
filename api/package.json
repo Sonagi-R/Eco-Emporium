@@ -8,7 +8,7 @@
     "setup-db": "node ./database/setup.js",
     "build": "node index.js",
     "test": "jest --forceExit --coverage",
-    "test-all-coverage": " --coverageReporters='text-summary'"  
+    "test-all-coverage": "jest --forceExit --coverage --coverageReporters='text-summary'"  
   },
   "repository": {
     "type": "git",

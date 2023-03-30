@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "coverage": "jest --coverage",
+    "coverage": "jest --coverage --coverageReporters='text-summary'",
     "test": "jest --watchAll",
     "dev": "live-server . --port=2000 --host=localhost"
   },
@@ -14,5 +14,8 @@
   "devDependencies": {
     "jest": "^29.5.0",
     "jsdom": "^21.1.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
   }
 }
