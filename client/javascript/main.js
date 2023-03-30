@@ -64,7 +64,7 @@ function createProductElement(data) {
 
   const productPrice = document.createElement("p")
   productPrice.className = "productPrice"
-  productPrice.textContent = data.price
+  productPrice.textContent = addDotToPrice(data.price)
   product.appendChild(productPrice)
   
   const productName = document.createElement("p")
@@ -73,6 +73,13 @@ function createProductElement(data) {
   product.appendChild(productName)
 
   return product;
+}
+
+function addDotToPrice(priceTally) {
+  priceString = priceTally.toString();
+  dotPosition = priceString.length - 2;
+  correctPrice = priceString.slice(0, dotPosition) + "." + priceString.slice(dotPosition);
+  return `£${correctPrice}`;
 }
 
 async function loadListings () {
