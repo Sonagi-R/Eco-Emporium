@@ -75,6 +75,7 @@ async function getUser(req, res) {
 
   try {
     const user = await User.getOneById(idx)
+    console.log(user)
     return res.status(200).json(user);
   } catch (e) {
     return res

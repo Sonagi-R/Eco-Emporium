@@ -52,87 +52,6 @@ INSERT INTO
     )
 VALUES
     (
-        'Laptop Backpack',
-        1,
-        8015,
-        'Clothes',
-        'This sleek and durable laptop backpack features multiple compartments and a padded sleeve to keep your laptop safe and secure.',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXsKib2hN1Hhm0nk-GLbP4CHna7WSyziaYEA&usqp=CAU',
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
-    ),
-    (
-        'Wireless Bluetooth Speaker',
-        1,
-        7000,
-        'Electronics',
-        'Experience high-quality sound and portability with this wireless Bluetooth speaker. It''s waterproof and has a long battery life.',
-        'https://cdn.shopify.com/s/files/1/0503/4170/7969/products/xdobo2_700x700.jpg?v=1671229502',
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
-    ),
-    (
-        'Smartphone Gimbal Stabilizer',
-        1,
-        12030,
-        'Electronics',
-        'Capture professional-grade videos with this smartphone gimbal stabilizer. It''s easy to use and has multiple modes for different shooting scenarios.',
-        'https://www.omnicoreagency.com/wp-content/uploads/2020/01/Zhiyun-Smooth-Q2-3-Axis-Handheld-Smartphone-Gimbal-Stabilizer-Table.jpg',
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
-    ),
-    (
-        'Leather Wallet',
-        1,
-        5050,
-        'Clothes',
-        'Keep your cash and cards organized with this stylish leather wallet. It has multiple compartments and a secure zippered closure.',
-        'https://revaayat.co.uk/wp-content/uploads/2021/05/GIX043.png',
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
-    ),
-    (
-        'Electric Toothbrush',
-        1,
-        9000,
-        'Electronics',
-        'Achieve a brighter, healthier smile with this electric toothbrush. It has multiple settings and a timer to ensure thorough cleaning.',
-        'https://growingsmiles.co.uk/wp-content/uploads/SURI-cover.png',
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
-    ),
-    (
-        'Travel Pillow',
-        1,
-        2510,
-        'Outdoor & Garden',
-        'Get a comfortable and restful sleep while traveling with this travel pillow. It''s lightweight and compact, making it easy to carry.',
-        'https://asset1.cxnmarksandspencer.com/is/image/mands/Memory-Foam-Travel-Pillow-1/PL_05_T40_8413L_T0_X_EC_0?$PDP_IMAGEGRID_1_LG$',
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
-    ),
-    (
-        'Vintage Leather Bag',
-        1,
-        12005,
-        'Clothes',
-        'Handcrafted from high-quality leather, this vintage-style bag features multiple compartments and a sturdy strap for comfortable wear.',
-        'https://i.ebayimg.com/images/g/zcYAAOSw4OFd5jFH/s-l500.jpg',
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
-    ),
-    (
-        'Designer Sunglasses',
-        1,
-        18040,
-        'Clothes',
-        'Make a fashion statement with these stylish sunglasses from a top designer brand. The frames are made from durable materials and the lenses provide 100% UV protection.',
-        'https://www.internetspecs.co.uk/user/products/large/radley-rayanna-designer-sunglasses-107.jpg',
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
-    ),
-    (
-        'Wireless Headphones',
-        1,
-        10060,
-        'Electronics',
-        'Experience crystal-clear sound and freedom of movement with these wireless headphones. They have a long battery life and are compatible with a range of devices.',
-        'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MXJ92?wid=2104&hei=2980&fmt=jpeg&qlt=95&.v=1580420175341',
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
-    ),
-    (
         'EVGA GTX 980 TI Reference Card - 6GB GDDR5',
         1,
         11999,
@@ -214,6 +133,69 @@ VALUES
         'https://i.ebayimg.com/images/g/AjMAAOSwB2NkIY1p/s-l500.jpg, https://i.ebayimg.com/images/g/y-YAAOSwP8dkIY1q/s-l500.jpg, https://i.ebayimg.com/images/g/kkUAAOSwg3pkIY1r/s-l500.jpg'
     ),
     (
+        'Nike Air Jordan 1 Mid Shoes Trainers',
+        1,
+        4726,
+        'Clothes',
+        'Bought just over a year ago and worn perhaps 5 times - aside from a little dirt they are in great condition.',
+        'https://i.ebayimg.com/images/g/~E0AAOSwGuRkJo~8/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/seoAAOSwO0dkJo~7/s-l500.jpg, https://i.ebayimg.com/images/g/hxAAAOSwzNNkJo~8/s-l500.jpg, https://i.ebayimg.com/images/g/YLQAAOSwL6NkJo~8/s-l500.jpg'
+    ),
+    (
+        'Black tunic dress in xl from HM',
+        1,
+        1500,
+        'Clothes',
+        'Black tunic dress in xl from HM. In soft viscose and in excellent condition. So take a look 😊',
+        'https://i.ebayimg.com/images/g/8GoAAOSw9dpkJOOv/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/sHcAAOSwxcFkJOOw/s-l500.jpg, https://i.ebayimg.com/images/g/u5MAAOSwZs5kJOOx/s-l500.jpg, https://i.ebayimg.com/images/g/KBkAAOSwRelkJOOy/s-l500.jpg'
+    ),
+    (
+        'LADIES M&S SIZE 12 14 16 20 OR 22 WHITE COTTON BRODERIE',
+        1,
+        1699,
+        'Clothes',
+        'LADIES M&S PURE COTTON BLOUSE TOP',
+        'https://i.ebayimg.com/images/g/xP8AAOSwXYdkG4U2/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/dC0AAOSwEIxkG4VI/s-l500.jpg, https://i.ebayimg.com/images/g/7eoAAOSw2ENkG4Vi/s-l500.jpg, https://i.ebayimg.com/images/g/DqMAAOSwwmBkG4TY/s-l500.jpg'
+    ),
+    (
+        'Mens champion navy blue full zip hoodie size xl',
+        1,
+        1295,
+        'Clothes',
+        'Mens champion navy blue full zip hoodie size xl. There is a few marks as shown in photos.',
+        'https://i.ebayimg.com/images/g/OLIAAOSwqgxjSatK/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/AwoAAOSwVnZjSatM/s-l500.jpg, https://i.ebayimg.com/images/g/m8wAAOSwMsdjSatP/s-l500.jpg, https://i.ebayimg.com/images/g/mVkAAOSw25pjSatX/s-l500.jpg'
+    ),
+    (
+        'tommy hilfiger hoodie sweatshirt large xl Ladies Men’s Unisex',
+        1,
+        2390,
+        'Clothes',
+        'tommy hilfiger hoodie sweatshirt large xl Ladies Men’s Unisex. Great looking - minor marks but overall in good condition',
+        'https://i.ebayimg.com/images/g/EJQAAOSw6CdkHXtb/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/KH0AAOSw-GtkHXtU/s-l500.jpg, https://i.ebayimg.com/images/g/oq8AAOSw~xRkHXtW/s-l500.jpg, https://i.ebayimg.com/images/g/H9IAAOSwxPFkHXtY/s-l500.jpg'
+    ),
+    (
+        'Trousers next size W34” L31” black polyester straight leg dress pants mens',
+        1,
+        899,
+        'Clothes',
+        'Trousers next size W34” L31” black polyester straight leg dress pants mens. Condition is good',
+        'https://i.ebayimg.com/images/g/ugoAAOSwMWpkGwkw/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/qVoAAOSw~xJkGwky/s-l500.jpg, https://i.ebayimg.com/images/g/qWEAAOSw~xJkGwkz/s-l500.jpg, https://i.ebayimg.com/images/g/pyUAAOSwEIxkGwk2/s-l500.jpg'
+    ),
+    (
+        'Ladies Paprika Multi Coloured Trousers Size Meduim side hem split',
+        1,
+        872,
+        'Clothes',
+        '',
+        'https://i.ebayimg.com/images/g/lycAAOSwDFNkDw6G/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/x2AAAOSw~2pkDw6L/s-l500.jpg, https://i.ebayimg.com/images/g/1cgAAOSwCtdkDw5~/s-l500.jpg, https://i.ebayimg.com/images/g/PhYAAOSwNbpkDw6B/s-l500.jpg'
+    ),
+    (
         'Winter Dog Coat Jacket Dog Apparel for Cold Weather Windproof Black medium',
         1,
         1275,
@@ -221,13 +203,4 @@ VALUES
         'Winter Dog Coat Jacket Dog Apparel for Cold Weather Windproof Black medium.',
         'https://i.ebayimg.com/images/g/nPYAAOSw3w1kHan0/s-l500.jpg',
         'https://i.ebayimg.com/images/g/7UQAAOSw6d1kHan2/s-l500.jpg, https://i.ebayimg.com/images/g/X2QAAOSw6CdkHan3/s-l500.jpg, https://i.ebayimg.com/images/g/nPwAAOSw3w1kHan4/s-l500.jpg'
-    ),
-    (
-        'Eco-Friendly Water Bottle',
-        1,
-        2570,
-        'Sports & Recreation',
-        'Reduce your environmental footprint with this eco-friendly water bottle made from recycled materials. It''s durable, leak-proof, and easy to carry.',
-        'https://cdn.shopify.com/s/files/1/0957/0496/products/black-blum-glass-water-bottle-olive-600ml-378961_1000x.jpg?v=1660560895',
-        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startech.com%2Fen-gb%2Fdisplay-mounting-ergonomics%2Fntbkbag156&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAI, https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81CGfbtI1cS._AC_SL1500_.jpg, https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsonite.co.uk%2Flitepoint-laptop-backpack-15.6---black%2F134549-1041.html&psig=AOvVaw0_cr5mohTcaUy9ITWPrOwM&ust=1680165067763000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOicueHcgP4CFQAAAAAdAAAAABAZ'
     );
