@@ -5,7 +5,6 @@ const userUpdateBtn = document.querySelector('#update-submit')
 const inputs = document.querySelectorAll('.update-input')
 
 userUpdateBtn.addEventListener('click', (e) => {
-    console.log('click')
     e.preventDefault()
     ammendUser(getFormData())
 })

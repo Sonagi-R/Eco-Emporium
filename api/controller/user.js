@@ -84,7 +84,6 @@ async function getUser(req, res) {
 }
 
 async function update(req, res) {
-  console.log('request recieved')
   const idx = parseInt(req.params.id)
   const updateUser = req.body
   console.log(updateUser)

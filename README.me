@@ -1,0 +1,51 @@
+# Eco Emporium 
+
+## About 
+
+Eco Emporium is a desktop site that allows users to buy & sell preloved items instead of throwing them out. 
+
+## Directory
+
+### Client-side
+
+| Page | Description|
+|------|------------|
+| Login/Register | Dynamic interactive page to create a new user/login which allows access to other pages |
+| Marketplace | Users can view all items currently up for sale |
+| Dynamic Item Page | Users can view more information and photos about individual items | 
+| Profile | User can see and update items they are selling and update their profile details|
+| Checkout | Users can pay for their items and put in billing and shipping details |
+
+### Server-side
+
+| Route | Method | Response |
+|-------|--------|----------|
+| "/auth/check" | GET | Checks if user is authenticated to be able to view website |
+| "/auth/register" | POST | Creates a new user account, redirects to view login |
+| "/auth/login" | POST | Logs user into their account, redirects to main marketplace page |
+| "/auth/logout" | GET | Logs user out of their account, redirects to login page |
+| "/auth/user" | GET | Checks new user's information meets requirements and creates new user. |
+| "/auth/user/:id" | GET | Finds user profile by their id |
+| "/auth/user/:id" | PATCH | Updates user details including email and password |
+
+| "/items" | GET | Shows all items in the database |
+| "/items/:id" | GET | Finds item by id, redirects to individual item page |
+| "/items/user/:id" | GET | Displays items sold by a specific user |
+| "/items" | POST | Creates a new item that is added to the database |
+| "/items/:id" | DELETE | Updates book loan status. |
+| "/items/:id" | PATCH | Gets all information about local landmarks. |
+
+userRouter.get("/check", userController.check);
+userRouter.post('/register', userController.register);
+userRouter.post("/login", userController.login);
+userRouter.get("/logout", userController.logout);
+userRouter.get("/user", userController.user);
+userRouter.get("/user/:id", userController.user);
+userRouter.patch("/user/:id", userController.update);
+
+itemRouter.get('/', itemController.index);
+itemRouter.get('/:id', itemController.getOneById);
+itemRouter.get('/user/:id', itemController.getByUserId);
+itemRouter.post('/', itemController.create);
+itemRouter.delete('/:id', itemController.destroy);
+itemRouter.patch('/:id', itemController.update);
