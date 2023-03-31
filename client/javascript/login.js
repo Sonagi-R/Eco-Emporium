@@ -31,7 +31,8 @@ const logIn = async (data) => {
 
   if (res.ok) {
     console.log(`Successfully logged in: ${user.username}`);
-    localStorage.setItem("user", JSON.stringify(user.username));
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("username", JSON.stringify(user.username));
     localStorage.setItem("user_id", JSON.stringify(user.user_id));
     window.location.assign("main.html");
   } else {
