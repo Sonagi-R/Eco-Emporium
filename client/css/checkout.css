@@ -5,8 +5,33 @@ body {
   margin-bottom: 10dvh;
 }
 
-span {
-  color: #69b161;
+header {
+  min-width: 100vw;
+  color: #202020;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 32px;
+  line-height: 56px;
+}
+
+header > span {
+  line-height: 39px;
+  vertical-align: middle;
+  font-size: 22px;
+}
+
+.user i {
+  color: #fafafa;
+  background: #202020;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.user > span {
+  margin: 10px;
+  cursor: pointer;
 }
 
 h1,
@@ -19,7 +44,7 @@ p {
 
 h2 {
   margin-bottom: 1dvh;
-  width: 5dvw;
+  width: min-content;
 }
 
 p {
@@ -160,7 +185,7 @@ h4 {
 }
 
 .item > h5 {
-    text-align: left;
+  text-align: left;
 }
 
 #total {

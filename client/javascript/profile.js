@@ -75,16 +75,16 @@ async function loadListings () {
     }
 }
 
-loadListings()
+ loadListings()
 
-function getFormData() {
+
+function getUserFormData() {
     const userFormData = {};
     inputs.forEach((input) => (userFormData[input.name] = input.value));
-    userFormData["user_id"] = localStorage.getItem('user_id')
     return userFormData;
   }
 
-const ammendUser = async (data) => {
+const amendUser = async (data) => {
     const options = {
         method: "PATCH",
         credentials: "include",

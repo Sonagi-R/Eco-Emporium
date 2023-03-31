@@ -2,7 +2,6 @@ const item_name = document.querySelector('#item-name-input');
 const item_category = document.querySelectorAll('#category-input');
 const item_price = document.querySelector('#item-price-input');
 const item_description = document.querySelector('#description-input');
-const item_image_url = document.querySelector('#main-image-input');
 const item_add_imgs = document.querySelectorAll('#additional-images-input');
 
 const submit = document.querySelector('.form-container')
@@ -31,7 +30,7 @@ function getFormData() {
     formData["user_id"] = localStorage.getItem('user_id')
     formData[img.name] = img.value
     formData[textarea.name] = textarea.value
-    formData[select .name] = select.textContent
+    formData[select.name] = select.value.charAt(0).toUpperCase() + select.value.slice(1);
     return formData;
   }
 

@@ -7,9 +7,12 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css" />
   <link rel="stylesheet" href="./css/item-page.css">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+  <script defer src="./javascript/logout.js"></script>
   <script defer src="./javascript/checkUser.js"></script>
   <script defer src="./javascript/setUser.js"></script>
   <script defer src="./javascript/item-page.js"></script>
+  <script defer src="./javascript/deleteListing.js"></script>
   <title>Eco Emporium</title>
 </head>
 <body>
@@ -42,7 +45,6 @@
       <h2 class="item-title"></h2>
       <div class="user-details">
         <div class="user-profile">
-          <img class="user-icon" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" alt="User profile icon">
         </div>
         <div class="username-status">
           <h3 id="seller"></h3>
@@ -53,7 +55,6 @@
       <h3 class="item-price">Selling for:&nbsp;<span id="price"></span></h3> 
       <div class="item-buttons">
         <button class="button-36" role="button" id="add-to-cart">Add To Cart</button>
-        <button class="button-37" role="button">Quick Buy</button>
       </div> 
       <div>
         <h3>Description:</h3>

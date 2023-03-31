@@ -193,3 +193,7 @@ header > span {
   width: 80%;
 }
 
+.update-button{
+  position: absolute;
+  transform: translateY(250%);
+}

@@ -75,6 +75,7 @@ async function getUser(req, res) {
 
   try {
     const user = await User.getOneById(idx)
+    console.log(user)
     return res.status(200).json(user);
   } catch (e) {
     return res
@@ -86,8 +87,8 @@ async function getUser(req, res) {
 async function update(req, res) {
   const idx = parseInt(req.params.id)
   const updateUser = req.body
-  console.log(updateUser)
   try {
+    console.log(updateUser)
     const user = await User.getOneById(idx)
     const result = await user.update(updateUser)
     res.status(200).send(result)

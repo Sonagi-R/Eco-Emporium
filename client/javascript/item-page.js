@@ -1,6 +1,7 @@
 const itemImage = document.querySelectorAll(".carousel-image");
 const sellerUsername = document.querySelector("#seller");
 const itemTitle = document.querySelector(".item-title");
+const itemButtons = document.querySelector(".item-buttons");
 const boughtPrice = document.querySelector("#bought-price");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
@@ -40,6 +41,8 @@ function createItemElement(data) {
   img.className = "current-image";
   img.id = "current-image";
   img.src = data.image_url;
+  img.setAttribute("user_id", data.user_id)
+  img.setAttribute("item_id", data.item_id)
 
   return img;
 }
@@ -71,11 +74,13 @@ async function loadItem() {
       { credentials: "include" }
     );
 
+    const user = await userResponse.json()
+
     items.push(item)
-    console.log(items)
     
     if (userResponse.status == 200) {
-      const { user } = await userResponse.json();
+
+      console.log(user)
 
       const itemImage = document.querySelector("#item-image");
       const multiCarosel = document.querySelector("#multi-carousel");
@@ -103,6 +108,15 @@ async function loadItem() {
       images.forEach(i => {
         currentImageList.push(i.src);
       });
+
+      if (localStorage.getItem("user_id") == elem.getAttribute("user_id") || JSON.parse(localStorage.getItem("user")).is_admin) {
+        const deleteBtn = document.createElement("button")
+        deleteBtn.className = "button-37"
+        deleteBtn.role = "button"
+        deleteBtn.textContent = "Delete Item"
+        deleteBtn.id = "delete-btn"
+        itemButtons.appendChild(deleteBtn)
+      }
     }
     else {
       window.location.assign("item-page.html");
@@ -131,7 +145,7 @@ previousButton.addEventListener('click', showPreviousImage);
 nextButton.addEventListener('click', showNextImage);
 
 addToCart.addEventListener("click", () => {
-  if (!checkout.find(item => item == items[0])) {
+  if (!JSON.parse(localStorage.checkout).find(item => item.name == items[0].name)) {
     checkout.push(items[0]);
   localStorage.setItem("checkout", JSON.stringify(checkout));
   updateCheckoutNum();
