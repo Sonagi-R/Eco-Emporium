@@ -42,7 +42,7 @@ Eco Emporium is a desktop site that allows users to buy & sell preloved items in
 ## Installation
 
 1. To get the repository set up on your computer, open your terminal and move into your desired directory using the `cd` command.
-2. From the <Code> button copy the HTTPS/SSH key and run the command `git clone` followed by the key you copied.
+2. From the Code button copy the HTTPS/SSH key and run the command `git clone` followed by the key you copied.
 3. Move into the repistory and run `code .` to open the code in VSCode/your desired IDE.
 4. Run `npm install` to install the necessary dependencies.
 5. Create a new instance with Elephant SQL (or another PostgreSQL site) and copy the instance link created.
