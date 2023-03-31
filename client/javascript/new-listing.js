@@ -45,7 +45,6 @@ const addListing = async (data) => {
     const res = await fetch(`https://localhost:8080/items`, options);
 
     if (res.ok) {
-        console.log('created')
       window.location.assign("main.html");
     } else {
       console.log("Something failed, very sad! :(");

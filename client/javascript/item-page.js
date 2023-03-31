@@ -218,7 +218,6 @@ function deleteCheckoutItem(button) {
   console.log(buttonIdArray)
   numOfId = buttonIdArray.join("")
   const currentDiv = document.querySelector(`#div${numOfId}`);
-  console.log(currentDiv);
   currentDiv.innerHTML = "";
   const storage = JSON.parse(localStorage.checkout);
   const itemIndex = storage.findIndex((item) => item.item_id == numOfId);

@@ -4,10 +4,9 @@ const overlay = document.querySelector("#overlay")
 const userUpdateBtn = document.querySelector('#update-submit')
 const inputs = document.querySelectorAll('.update-input')
 
-userUpdateBtn.addEventListener('click', () => {
-    console.log('clicked')
-    amendUser(getUserFormData())
-    console.log('request done')
+userUpdateBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    ammendUser(getFormData())
 })
 
 newListingBtn.addEventListener("click", () => {
