@@ -27,13 +27,12 @@ Eco Emporium is a desktop site that allows users to buy & sell preloved items in
 | "/auth/user" | GET | Checks new user's information meets requirements and creates new user. |
 | "/auth/user/:id" | GET | Finds user profile by their id |
 | "/auth/user/:id" | PATCH | Updates user details including email and password |
-
 | "/items" | GET | Shows all items in the database |
 | "/items/:id" | GET | Finds item by id, redirects to individual item page |
 | "/items/user/:id" | GET | Displays items sold by a specific user |
 | "/items" | POST | Creates a new item that is added to the database |
-| "/items/:id" | DELETE | Updates book loan status. |
-| "/items/:id" | PATCH | Gets all information about local landmarks. |
+| "/items/:id" | DELETE | Deletes item that was created by user |
+| "/items/:id" | PATCH | Updates item that was created by user |
 
 userRouter.get("/check", userController.check);
 userRouter.post('/register', userController.register);
