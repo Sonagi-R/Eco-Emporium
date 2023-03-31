@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css" />
+  <link rel="stylesheet" href="./css/item-page.css">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+  <script defer src="./javascript/logout.js"></script>
+  <script defer src="./javascript/checkUser.js"></script>
+  <script defer src="./javascript/setUser.js"></script>
+  <script defer src="./javascript/item-page.js"></script>
+  <script defer src="./javascript/deleteListing.js"></script>
+  <title>Eco Emporium</title>
+</head>
+<body>
+  <header>
+    <a href="main.html"><h1><span class="h1-eco">Eco</span> Emporium</h1></a>
+    <div class="user">
+      <span id="sign-out-btn">Sign out</span>
+      <a href="profile.html"><span id="username">Username<i class="fa-solid fa-user"></i></span></a>
+      <span class="dropdown"><i id="checkoutButton" class="fa-solid fa-cart-shopping"><h2 id="numOfItems"></h2></i>
+        <div class="dropdown-content">
+          <button id="goToCheckout">Checkout</button>
+        </div> 
+      </div>
+    </div>
+  </header>
+  <div class="main-page">
+    <div class="multi-carousel" id="multi-carousel">
+    </div>
+    <div class="item-image" id="item-image">
+      <div class="btn-overlay">
+        <button href="#" class="change-img-btn" id="previous" previous>
+          <i class="fa-regular fa-angle-left fa-xl"></i>
+        </button>
+        <button href="#" class="change-img-btn" id="next" next>
+          <i class="fa-regular fa-angle-right fa-xl"></i>
+        </button>                   
+      </div>
+    </div>
+    <div class="item-details">
+      <h2 class="item-title"></h2>
+      <div class="user-details">
+        <div class="user-profile">
+        </div>
+        <div class="username-status">
+          <h3 id="seller"></h3>
+          <p id="seller-stats"></p>
+        </div>                  
+      </div>
+      <h3 class="item-bought">Bought for:&nbsp;<span id="bought-price"></span></h3> 
+      <h3 class="item-price">Selling for:&nbsp;<span id="price"></span></h3> 
+      <div class="item-buttons">
+        <button class="button-36" role="button" id="add-to-cart">Add To Cart</button>
+      </div> 
+      <div>
+        <h3>Description:</h3>
+        <p id="description"></p>
+      </div>
+      <div class="tags">
+        <p id="tag"><i class="fa-solid fa-tags fa-xl" style="color: #55c371;" id="tags"></i>Tags: Nike, Shoes, Mens, Orange</p>
+      </div>
+      <div class="quick-actions">
+        <i class="fa-solid fa-heart fa-xl" style="color: #55c371;"></i>
+        <i class="fa-solid fa-messages fa-xl" style="color: #55c371;"></i>
+        <i class="fa-solid fa-share-from-square fa-xl" style="color: #55c371;""></i>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

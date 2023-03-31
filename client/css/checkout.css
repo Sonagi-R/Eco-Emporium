@@ -1,0 +1,199 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10dvh;
+}
+
+header {
+  min-width: 100vw;
+  color: #202020;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 32px;
+  line-height: 56px;
+}
+
+header > span {
+  line-height: 39px;
+  vertical-align: middle;
+  font-size: 22px;
+}
+
+.user i {
+  color: #fafafa;
+  background: #202020;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.user > span {
+  margin: 10px;
+  cursor: pointer;
+}
+
+h1,
+h2,
+p {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 1dvh;
+  width: min-content;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 4dvh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 30%;
+  height: 95dvh;
+  margin-right: 4%;
+}
+
+.information {
+  height: 45%;
+  width: 27dvw;
+  padding: 1dvh 3dvw;
+  border: 1px solid rgba(128, 128, 128, 0.479);
+  margin-bottom: 5%;
+}
+
+.billing {
+  margin-bottom: 0;
+}
+
+input,
+label {
+  display: block;
+}
+
+label {
+  margin-bottom: 1dvh;
+  color: grey;
+}
+
+input {
+  border: 1px solid rgba(128, 128, 128, 0.534);
+  height: 3dvh;
+  width: 80%;
+  padding-left: 1dvh;
+}
+
+.input {
+  display: inline-block;
+  width: 49%;
+  margin: 2dvh 0;
+}
+
+#emailInput {
+  width: 90%;
+}
+
+#email {
+  width: 100%;
+  height: 30px;
+}
+
+#card-number {
+  width: 90%;
+}
+
+#card-input {
+  width: 100%;
+}
+
+.card {
+  width: 30%;
+}
+
+button {
+  width: 25dvw;
+  height: 5dvh;
+  margin-top: 1dvh;
+  border: none;
+  background-color: #69b161;
+  color: white;
+  font-size: large;
+}
+
+button:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+article {
+  flex-basis: 15%;
+  border: 1px solid black;
+  height: 70dvh;
+  width: 25dvw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#checkoutList {
+  width: 100%;
+  overflow: auto;
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+}
+
+#checkoutList::-webkit-scrollbar {
+  display: none;
+}
+
+img {
+  height: 25dvh;
+}
+
+h4 {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.336);
+  background-color: #69b161;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 1dvh 0;
+  font-weight: 600;
+  margin-bottom: auto;
+}
+
+.item {
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: large;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item > h5 {
+  text-align: left;
+}
+
+#total {
+  width: 90%;
+  height: 10dvh;
+  margin-top: auto;
+  padding-top: 3dvh;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid rgba(128, 128, 128, 0.336);
+}

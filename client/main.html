@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css" />
+    <script defer src="./javascript/checkUser.js"></script>
+    <script defer src="./javascript/setUser.js"></script>
+    <script defer src="./javascript/main.js"></script>
+    <script defer src="./javascript/new-listing.js"></script>
+    <script defer src="./javascript/logout.js"></script>
+    <title>Eco Emporium</title>
+  </head>
+  <body>
+    <header>
+      <a href="main.html"
+        ><h1><span class="h1-eco">Eco</span> Emporium</h1></a
+      >
+      <div class="user">
+        <span id="sign-out-btn">Sign out</span>
+        <a href="profile.html"><span id="username">Username<i class="fa-solid fa-user"></i></span></a>
+      </div>
+    </header>
+
+    <div class="dashboard">
+      <div class="category-drop-down">
+        <nav>
+          <input id="toggle" type="checkbox" checked />
+          <h2>Products</h2>
+          <ul>
+            <li><button id="all-items">All Items</button></li>
+            <li><button class="categories" id="clothes">Clothes</button></li>
+            <li><button class="categories" id="electronics">Electronics</button></li>
+            <li><button class="categories" id="furniture">Furniture</button></li>
+            <li><button class="categories" id="toys-&-games">Toys & Games</button></li>
+            <li><button class="categories" id="pet-supplies">Pet Supplies</button></li>
+            <li><button class="categories" id="sports-&-recreation">Sports & Recreation</button></li>
+            <li><button class="categories" id="outdour-&-garden">Outdoor & Garden</button></li>
+            <li><button id="other">Other</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="category-panel panel">
+        <div class="category-list">
+          <div class="category-title">Products</div>
+          <div class="category-options">
+            <button id="all-items">All Items</button>
+            <button class="categories" id="clothes">Clothes</button>
+            <button class="categories" id="electronics">Electronics</button>
+            <button class="categories" id="furniture">Furniture</button>
+            <button class="categories" id="toys-&-games">Toys & Games</button>
+            <button class="categories" id="pet-supplies">Pet Supplies</button>
+            <button class="categories" id="sports-&-recreation">Sports & Recreation</button>
+            <button class="categories" id="outdour-&-garden">Outdoor & Garden</button>
+            <button id="other">Other</button>
+          </div>
+        </div>
+      </div>
+      <div class="products-panel panel">
+        <div class="products-panel-header">
+          <div class="product-category-name">All Items</div>
+          <button id="new-listing-btn">New listing</button>
+        </div>
+        <div class="product-list" id="product-list">
+          
+        </div>
+        <footer class="footer">
+          <div class="pagination" id="pagination"></div>
+        </footer>
+      </div>
+    </div>
+    <div class="overlay" id="overlay">
+      <form class="form-container">
+        <div class="form-group">
+          <label for="main-image-input">Item Image:</label>
+          <input class="listing-img" type="text" accept="image/*" id="main-image-input" name="image_url" type="url" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="item-name-input">Item Name:</label>
+          <input class="listing-input"type="text" id="item-name-input" name="name" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="item-price-input">Item Price:</label>
+          <input class="listing-input" type="number" id="item-price-input" name="price" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="description-input">Description:</label>
+          <textarea class="listing-text-area" id="description-input" name="description" required></textarea>
+        </div>
+      
+        <div class="form-group">
+          <label for="category-input">Category:</label>
+          <select class="listing-select" id="category-input" name="category" required>
+            <option value="clothes">Clothes</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="toys-games">Toys & Games</option>
+            <option value="pet-supplies">Pet Supplies</option>
+            <option value="sports-recreation">Sports & Recreation</option>
+            <option value="outdoor-garden">Outdoor & Garden</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      
+        <div class="form-group">
+          <label for="additional-images-input">Additional Images:</label>
+          <input class="listing-add-img" type="text" accept="image/*" id="main-image-input" name="additional_imgs" type="url" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)" required>
+          <input class="listing-add-img" type="text" accept="image/*" id="main-image-input" name="additional_imgs" type="url" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)" required>
+          <input class="listing-add-img" type="text" accept="image/*" id="main-image-input" name="additional_imgs" type="url" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif)" required>
+        </div>
+      
+        <div class="buttons">
+          <input type="submit" value="Submit" class="form-button">
+          <button style="background-color: #c24f3f" class="form-button" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
