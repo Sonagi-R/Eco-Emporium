@@ -51,9 +51,9 @@ Eco Emporium is a desktop site that allows users to buy & sell preloved items in
 - [x] DB_URL=<postgresql_instance_url>
 - [x] SECRET=<any_secret_word>  
 - [x] IN_TRUE=false
-<br>
+
 Make sure there are no spaces between the content on each line and ensure you don't add any commas or any other punctuation at the end of each line.
-<br>
+
 7. Set up the database connection by running `npm run setup-db`
 8. To get the server running, run `npm run dev`
 
@@ -78,7 +78,10 @@ When users first go to the site they are directed to either sign up or sign in. 
 
 The marketplace shows all items that are being sold with pagination and further options to sort by category.
 
-
+<p align="center">
+<img src="https://github.com/Sonagi-R/Eco-Emporium/blob/ana/documentation/homepage-sign-up.png" width=75% height=75%>
+</p>
+<br>
 
 When sorting by category we see only items that fit that category, making the user experience easier to find specific items.
 
