@@ -125,6 +125,10 @@ header > span {
   padding-bottom: 25px;
 }
 
+.productName {
+  font-size: 14px;
+}
+
 .product-list {
   width: 100%;
   height: 100%;

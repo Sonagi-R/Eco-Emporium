@@ -9,7 +9,7 @@ complete.addEventListener("click", () => {
     currentItem.innerHTML = "";
   });
   localStorage.removeItem("checkout");
-  window.location.assign("main.html");
+  //window.location.assign("main.html");
 });
 
 let priceTally = 0;
@@ -36,6 +36,7 @@ async function deleteFromDB(checkoutItem) {
 
   if (response.status == 200) {
     const item = await response.json();
+    console.log(item)
     fetch(`https://localhost:8080/items/${item.item_id}`, {
       method: "delete",
       headers: { "Content-Type": "application/json" },

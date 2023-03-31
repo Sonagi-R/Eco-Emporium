@@ -25,6 +25,24 @@ VALUES
         'user@test123.com',
         '$2b$10$Rg2AXCBalbVJb8p1eQZOL.Aq/Ir/RRU8tT17OvBHZtpSqL6mM4YJO',
         false
+    ),
+    (
+        'Cosgun',
+        'cosgun@cosgun.com',
+        '$2b$10$wgc2myC/L8NmDGsfmonl1.2jlN2L8pWauyQG9XNoLUmjtlztr0kVy',
+        false
+    ),
+    (
+        'Ana',
+        'ana@ana.com',
+        '$2b$10$wgc2myC/L8NmDGsfmonl1.2jlN2L8pWauyQG9XNoLUmjtlztr0kVy',
+        false
+    ),
+    (
+        'Lewis',
+        'lewis@lewis.com',
+        '$2b$10$wgc2myC/L8NmDGsfmonl1.2jlN2L8pWauyQG9XNoLUmjtlztr0kVy',
+        false
     );
 
 CREATE TABLE items(
@@ -191,12 +209,174 @@ VALUES
         1,
         872,
         'Clothes',
-        '',
+        'Ladies Paprika Multi Coloured Trousers Size Meduim.',
         'https://i.ebayimg.com/images/g/lycAAOSwDFNkDw6G/s-l500.jpg',
         'https://i.ebayimg.com/images/g/x2AAAOSw~2pkDw6L/s-l500.jpg, https://i.ebayimg.com/images/g/1cgAAOSwCtdkDw5~/s-l500.jpg, https://i.ebayimg.com/images/g/PhYAAOSwNbpkDw6B/s-l500.jpg'
     ),
     (
-        'Winter Dog Coat Jacket Dog Apparel for Cold Weather Windproof Black medium',
+        'Ladies Womens Joggers lounge Wear Jack Wills Burgundy Jogging Bottoms Size 8',
+        1,
+        900,
+        'Clothes',
+        'Ladies Womens Joggers lounge Wear Jack Wills Burgundy Jogging Bottoms Size 8.',
+        'https://i.ebayimg.com/images/g/B1QAAOSwrbRkGieq/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/YrgAAOSw-A9kGiec/s-l500.jpg, https://i.ebayimg.com/images/g/nwMAAOSwF2tkGifi/s-l500.jpg, https://i.ebayimg.com/images/g/WDkAAOSwL5BkGifn/s-l500.jpg'
+    ),
+    (
+        'Soulcal&Co man’s cotton jumper.Size L.',
+        1,
+        1251,
+        'Clothes',
+        'Soulcal&Co man’s cotton jumper.Size L..',
+        'https://i.ebayimg.com/images/g/AW8AAOSwv45kHfYR/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/MsUAAOSwmddkHfYT/s-l500.jpg, https://i.ebayimg.com/images/g/R9oAAOSwd2lkHfY6/s-l500.jpg, https://i.ebayimg.com/images/g/xEsAAOSw6jlkHfZ3/s-l500.jpg'
+    ),
+    (
+        'Marks & Spencer Cream & Black Patterned Knit Vest',
+        1,
+        1251,
+        'Clothes',
+        'Marks & Spencer Cream & Black Patterned Knitted Vest Sleeveless Jumper Tank Size M',
+        'https://i.ebayimg.com/images/g/wFYAAOSwJApkDgBy/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/EVUAAOSwKDtkDgBz/s-l500.jpg, https://i.ebayimg.com/images/g/mgkAAOSwQxNkDgB2/s-l500.jpg, https://i.ebayimg.com/images/g/19cAAOSwMVxkDgB4/s-l500.jpg'
+    ),
+    (
+        '6 × Assorted Playstation/Xbox 360/PC Gamer Demo Disc DVD ROM.',
+        1,
+        799,
+        'Electronics',
+        'These demo discs are DVD ROM. Sold as a bundle only 6 in total. All are used and are in good condition.',
+        'https://i.ebayimg.com/images/g/i7MAAOSwj8JjpFYK/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/FlQAAOSwsC5jpFYQ/s-l500.jpg, https://i.ebayimg.com/images/g/HX8AAOSw-KJjpFYW/s-l500.jpg, https://i.ebayimg.com/images/g/MlQAAOSwVhxjpFYe/s-l500.jpg'
+    ),
+    (
+        'Dell HDMI monitor used 21 inch pre-owned',
+        1,
+        2529,
+        'Electronics',
+        'Pre-owned DELL HDMI monitor available for collection. Good Working condition',
+        'https://i.ebayimg.com/images/g/KvwAAOSweL9kHyjh/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/HpkAAOSw4pNkHyjm/s-l500.jpg, https://i.ebayimg.com/images/g/tHEAAOSwWq1kHyjz/s-l500.jpg, https://i.ebayimg.com/images/g/fucAAOSwkptkHyjP/s-l500.jpg'
+    ),
+    (
+        'Razer Seiren X Streaming USB Condenser Microphone',
+        1,
+        3999,
+        'Electronics',
+        'Seem to be very rare to come across, very good microphone, only use two or 3 times but still in good condition havent got the box but cable comes with the mic',
+        'https://i.ebayimg.com/images/g/btkAAOSwDyVkJqBR/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/21wAAOSwSlFkJqBR/s-l500.jpg, https://i.ebayimg.com/images/g/btkAAOSwDyVkJqBR/s-l500.jpg, https://i.ebayimg.com/images/g/21wAAOSwSlFkJqBR/s-l500.jpg'
+    ),
+    (
+        'Razer Nommo 2.0 PC Gaming Speakers',
+        1,
+        4999,
+        'Electronics',
+        'Razer Nommo 2.0 PC Gaming Speakers - Black - only used a couple of times',
+        'https://i.ebayimg.com/images/g/HSgAAOSw-HNkHyOJ/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/65wAAOSw4J1kHyOI/s-l500.jpg, https://i.ebayimg.com/images/g/G-oAAOSw-iRkHyOI/s-l500.jpg, https://i.ebayimg.com/images/g/7pEAAOSw4EVkHyOJ/s-l500.jpg'
+    ),
+    (
+        'Henry Hoover Microfibre Screen Cleaner',
+        1,
+        4999,
+        'Electronics',
+        'Henry Hoover Microfibre Screen Cleaner - Novelty Desk Accessory. Designed to keep electronic devices clean. ',
+        'https://i.ebayimg.com/images/g/aLoAAOSwtWRjd611/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/huUAAOSwGLRjd62S/s-l500.jpg, https://i.ebayimg.com/images/g/YEEAAOSwqRJjd62h/s-l500.jpg, https://i.ebayimg.com/images/g/QSIAAOSw1lZjd62p/s-l500.jpg'
+    ),
+    (
+        'Lenovo Thinkcentre M720q Tiny PC- i3 8th gen',
+        1,
+        12000,
+        'Electronics',
+        'Lenovo Thinkcentre M720q Tiny PC- i3 8th gen. In excellent condition.  Please check the specs section for all the technical details.',
+        'https://i.ebayimg.com/images/g/HAIAAOSwiUtkJp0I/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/G74AAOSw2ClkJp0J/s-l500.jpg, https://i.ebayimg.com/images/g/WSUAAOSwLulkJp0K/s-l500.jpg, https://i.ebayimg.com/images/g/Tx4AAOSwfc1kJp0L/s-l500.jpg'
+    ),
+    (
+        'Retro PC - Time computer - Windows ME - DOS - Retro Games',
+        1,
+        2500,
+        'Electronics',
+        'Retro PC - Time computer - Windows ME - DOS - Retro Games',
+        'https://i.ebayimg.com/images/g/rjQAAOSwGh5kIHlu/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/Uk8AAOSwUj5kIHlv/s-l500.jpg, https://i.ebayimg.com/images/g/VlgAAOSw5jhkIHlu/s-l500.jpg, https://i.ebayimg.com/images/g/cMQAAOSwRfhkIJP2/s-l500.jpg'
+    ),
+    (
+        'Intel I3/I5/I7 Ryzen 5/7/9 Nvidia GTX/RTX AMD RX',
+        1,
+        30000,
+        'Electronics',
+        'Pc Gaming Intel I3/I5/I7 Ryzen 5/7/9 Nvidia Gtx/Rtx Amd Rx Ram 8/16/32/64 Gb.Fortnite/Warzone/Gta5/Hogwarts Legacy/Rdr2',
+        'https://i.ebayimg.com/images/g/oI0AAOSwoolkDSIH/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/C5sAAOSwcPhkDSGC/s-l500.jpg, https://i.ebayimg.com/images/g/G5EAAOSwsrFkDSIJ/s-l500.jpg, https://i.ebayimg.com/images/g/AKcAAOSwaAxkDSIK/s-l500.jpg'
+    ),
+    (
+        'King size bed with M&S Pocket Sprung 1250',
+        1,
+        3500,
+        'Furniture',
+        'In good condition. There is a water mark on the headboard and the mattress has a part of the cover missing but this has not been an issue for the function of the bed. There are photos on the advert so you can see.',
+        'https://i.ebayimg.com/images/g/5ysAAOSw3Vxj333M/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/3W8AAOSwbPlj333H/s-l500.jpg, https://i.ebayimg.com/images/g/3uUAAOSwCrpj333K/s-l500.jpg, https://i.ebayimg.com/images/g/tsgAAOSwnyFj333L/s-l500.jpg'
+    ),
+    (
+        'Stua Wingback Chairs, Set of 2 Chairs',
+        1,
+        1200,
+        'Furniture',
+        'Old, used marked, some scratches, please see photos. no rust or corrosion on chrome.',
+        'https://i.ebayimg.com/images/g/OxMAAOSwe-BkHYAZ/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/ksoAAOSwQUBkHYAa/s-l500.jpg, https://i.ebayimg.com/images/g/VYgAAOSwWxZkHYAc/s-l500.jpg, https://i.ebayimg.com/images/g/BGMAAOSwbhNkHYAd/s-l500.jpg'
+    ),
+    (
+        'Ikea Poang Chair',
+        1,
+        2499,
+        'Furniture',
+        'Ikea Poang Chair. Dark grey fabric, excellent condition, barely used in a house with NO pets or children :-)',
+        'https://i.ebayimg.com/images/g/JcQAAOSw00VkHcfV/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/XEQAAOSwyBhkHcfX/s-l500.jpg, https://i.ebayimg.com/images/g/IsMAAOSwkXJkHcfZ/s-l500.jpg, https://i.ebayimg.com/images/g/V9wAAOSw7ntkHcfa/s-l500.jpg'
+    ),
+    (
+        'IKEA Hemnes Chest of 8 drawers in off-white',
+        1,
+        3200,
+        'Furniture',
+        'This unit is in pretty good used condition as can be seen in the photos, with no major scratches, gouges or dents.',
+        'https://i.ebayimg.com/images/g/1VsAAOSwpT9kJXWx/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/CL4AAOSwZKlkJXWz/s-l500.jpg, https://i.ebayimg.com/images/g/zuoAAOSw0AhkJXW0/s-l500.jpg, https://i.ebayimg.com/images/g/npMAAOSwl41kJXW1/s-l500.jpg'
+    ),
+    (
+        'Vi Spring king uk sized De Luxe divan base with 2 drawers',
+        1,
+        3999,
+        'Furniture',
+        'Vi Spring king sized De Luxe divan base with 2 drawers, cream, free headboard.',
+        'https://i.ebayimg.com/images/g/YWQAAOSw2A5kHXh9/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/8LAAAOSw6jlkHXXo/s-l500.jpg, https://i.ebayimg.com/images/g/wlMAAOSwSPRkHXYR/s-l500.jpg, https://i.ebayimg.com/images/g/lUAAAOSwvd5kHXYl/s-l500.jpg'
+    ),
+    (
+        'Solid Wood Double Bed 4ft 6in',
+        1,
+        4599,
+        'Furniture',
+        'Solid Wood 4ft 6ins Double Bed purchased originally from John Lewis Complete With a Sprung Mattress by Ralyon.',
+        'https://i.ebayimg.com/images/g/EUcAAOSw2EJkJccD/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/atMAAOSw3ndkJccD/s-l500.jpg, https://i.ebayimg.com/images/g/soUAAOSwGx9kJccE/s-l500.jpg, https://i.ebayimg.com/images/g/saQAAOSwXkZkJccD/s-l500.jpg'
+    ),
+    (
+        'Single bed with storage drawer',
+        1,
+        1699,
+        'Furniture',
+        'The Jango Single Bed is strong, simple and timeless, making it perfect for looking after little ones and teenagers.',
+        'https://i.ebayimg.com/images/g/MbcAAOSwML1kHt9t/s-l500.jpg',
+        'https://i.ebayimg.com/images/g/E0EAAOSwgxxkHt9u/s-l500.jpg, https://i.ebayimg.com/images/g/cYAAAOSw8yJkHt9w/s-l500.jpg, https://i.ebayimg.com/images/g/ZVAAAOSw1V9kHt9v/s-l500.jpg'
+    ),
+    (
+        'Winter Dog Coat Jacket Dog Apparel for Cold Weather',
         1,
         1275,
         'Pet Supplies',
