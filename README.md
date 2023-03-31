@@ -71,7 +71,19 @@ These are the necessary libraries used with this repository:
 
 ### Login/Register page:
 
-When users first go to the site they are directed to either sign up or sign in. The views dynamically change with button clicks on 'Login' or 'Sign Up' to reveal the relevant form to register/login.
+When users first go to the site they are directed to either sign up or sign in. If the user doesn't have an account to begin with they are able to create an account.
+
+<p align="center">
+<img src="https://github.com/Sonagi-R/Eco-Emporium/blob/ana/documentation/homepage-sign-up.png" width=75% height=75%>
+</p>
+<br>
+
+The views dynamically change with button clicks on 'Login' or 'Sign Up' to reveal the relevant form between register and login.
+
+<p align="center">
+<img src="https://github.com/Sonagi-R/Eco-Emporium/blob/ana/documentation/homepage-sign-in.png" width=75% height=75%>
+</p>
+<br>
 
 
 ## Main page:
@@ -79,16 +91,34 @@ When users first go to the site they are directed to either sign up or sign in. 
 The marketplace shows all items that are being sold with pagination and further options to sort by category.
 
 <p align="center">
-<img src="https://github.com/Sonagi-R/Eco-Emporium/blob/ana/documentation/homepage-sign-up.png" width=75% height=75%>
+<img src="https://github.com/Sonagi-R/Eco-Emporium/blob/ana/documentation/all-marketplace.png" width=75% height=75%>
 </p>
 <br>
 
 When sorting by category we see only items that fit that category, making the user experience easier to find specific items.
 
+<p align="center">
+<img src="https://github.com/Sonagi-R/Eco-Emporium/blob/ana/documentation/marketplace-category-electronics.png" width=75% height=75%>
+</p>
+<br>
+
+## Viewing items:
+
+When a user clicks on an item on the main page they are redirected to the individual item page. The sections are filled dynamically according to what item has been clicked on. Here a user can see more details for each item and chose to add the item to their cart.
+
+<p align="center">
+<img src="https://github.com/Sonagi-R/Eco-Emporium/blob/ana/documentation/individual-item-page.png" width=75% height=75%>
+</p>
+<br>
+
 ## Adding items:
 
 Users are able to add items to sell with this form which connects to a database, adding the item to the marketplace.
 
+<p align="center">
+<img src="https://github.com/Sonagi-R/Eco-Emporium/blob/ana/documentation/create-new-item-screen.png" width=75% height=75%>
+</p>
+<br>
 
 ## User profile:
 
