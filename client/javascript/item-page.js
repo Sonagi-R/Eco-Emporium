@@ -131,7 +131,7 @@ previousButton.addEventListener('click', showPreviousImage);
 nextButton.addEventListener('click', showNextImage);
 
 addToCart.addEventListener("click", () => {
-  if (!checkout.find(item => item == items[0])) {
+  if (!JSON.parse(localStorage.checkout).find(item => item.name == items[0].name)) {
     checkout.push(items[0]);
   localStorage.setItem("checkout", JSON.stringify(checkout));
   updateCheckoutNum();
